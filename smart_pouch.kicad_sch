@@ -12034,6 +12034,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:BATT_5V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BATT_5V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"BATT_5V\" (battery-derived 5V boost for biometric sensor)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BATT_5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BATT_5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -13403,9 +13542,127 @@
 		(at 168.91 322.58)
 		(uuid "098cc760-df22-475a-8e98-d6ae0a836ffe")
 	)
-	(no_connect
-		(at 133.35 288.29)
-		(uuid "0b121a00-1e95-48fb-8922-4cb252fa336f")
+	(wire
+		(pts
+			(xy 116.84 288.29) (xy 133.35 288.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "vio-dec-wire")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 113.03 288.29 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "vio-dec-cap-c32")
+		(property "Reference" "C32"
+			(at 113.03 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 113.03 292.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "vio-dec-cap-c32-pin1")
+		)
+		(pin "2"
+			(uuid "vio-dec-cap-c32-pin2")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.22 288.29 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "vio-dec-gnd")
+		(property "Reference" "#PWR_VIO_GND"
+			(at 109.22 295.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.22 291.85 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "vio-dec-gnd-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_VIO_GND")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(no_connect
 		(at 133.35 285.75)
@@ -13679,9 +13936,176 @@
 		(at 462.28 298.45)
 		(uuid "a11134c5-5852-4d98-bfee-02e8448bd4d2")
 	)
-	(no_connect
-		(at 133.35 351.79)
-		(uuid "a1d2544e-faa8-443c-b5bf-d6c68886969d")
+	(wire
+		(pts
+			(xy 133.35 351.79) (xy 121.92 351.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "coex2-pulldown-wire-a")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 355.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "coex2-pulldown-resistor-r25")
+		(property "Reference" "R25"
+			(at 124.46 354.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 124.46 356.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 355.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 355.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 121.92 355.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "coex2-pulldown-r25-pin2")
+		)
+		(pin "1"
+			(uuid "coex2-pulldown-r25-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 359.41 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "coex2-pulldown-gnd")
+		(property "Reference" "#PWR_COEX2_GND"
+			(at 115.57 359.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 118.11 359.4099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 359.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 359.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 121.92 359.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "coex2-pulldown-gnd-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_COEX2_GND")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(no_connect
 		(at 168.91 320.04)
@@ -13811,9 +14235,25 @@
 		(at 168.91 345.44)
 		(uuid "d6da51db-fe1a-4a6f-970f-c388aef8b1c5")
 	)
-	(no_connect
-		(at 717.55 264.16)
-		(uuid "dbea03a2-367d-4a56-84c3-0b477378b510")
+	(wire
+		(pts
+			(xy 715.01 264.16) (xy 706.12 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "shphld-vsys-wire-a")
+	)
+	(label "VSYS"
+		(at 706.12 264.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "shphld-vsys-label")
 	)
 	(no_connect
 		(at 133.35 283.21)
@@ -13851,9 +14291,15 @@
 		(at 133.35 298.45)
 		(uuid "f4144be2-2ebd-41bc-a521-fc14b3827c4b")
 	)
-	(no_connect
-		(at 717.55 261.62)
-		(uuid "f434344b-8119-4429-bf2d-5fbbd3d98e0d")
+	(label "USB_CC"
+		(at 717.55 261.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "npm1300-cc1-usb-cc-label")
 	)
 	(no_connect
 		(at 133.35 356.87)
@@ -15949,15 +16395,83 @@
 		)
 		(uuid "0950827c-165c-4a24-9652-00b8b9411c60")
 	)
-	(label "VCC_9151"
+	(symbol
+		(lib_id "power:+1V8")
 		(at 203.2 340.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "0a5d822f-ab14-43de-a978-9f18064b585f")
+		(property "Reference" "#PWR_VDD_GPIO"
+			(at 203.2 344.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 203.2 335.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+1V8\""
+			(at 203.2 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a5d822f-1v8-vdd-gpio-nrf9151-pin65")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_VDD_GPIO")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(label "ACC_SDA"
 		(at 397.51 118.11 180)
@@ -21842,6 +22356,16 @@
 				)
 			)
 		)
+	)
+	(label "USB_CC"
+		(at 739.14 365.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "usbc-cc-net-label")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -29158,7 +29682,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
+		(lib_id "power:BATT_5V")
 		(at 552.45 40.64 0)
 		(unit 1)
 		(body_style 1)
@@ -29180,7 +29704,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "BATT_5V"
 			(at 552.45 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29212,7 +29736,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
+		(property "Description" "Power symbol creates a global label with name \"BATT_5V\" (battery-derived 5V boost for biometric sensor)"
 			(at 552.45 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -29427,7 +29951,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
+		(lib_id "power:BATT_5V")
 		(at 344.17 35.56 0)
 		(unit 1)
 		(body_style 1)
@@ -29449,7 +29973,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "BATT_5V"
 			(at 344.17 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29481,7 +30005,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
+		(property "Description" "Power symbol creates a global label with name \"BATT_5V\" (battery-derived 5V boost for biometric sensor)"
 			(at 344.17 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -37055,6 +37579,260 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 548.64 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "i2c-sda-pullup-r26")
+		(property "Reference" "R26"
+			(at 551.18 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 551.18 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 548.64 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 548.64 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "i2c-sda-pullup-r26-pin1")
+		)
+		(pin "2"
+			(uuid "i2c-sda-pullup-r26-pin2")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+1V8")
+		(at 548.64 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "i2c-sda-pullup-1v8")
+		(property "Reference" "#PWR_I2C_SDA_PU"
+			(at 548.64 79.756 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 548.64 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "i2c-sda-pullup-1v8-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_I2C_SDA_PU")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 548.64 83.82) (xy 551.18 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "i2c-sda-pullup-wire-h")
+	)
+	(wire
+		(pts
+			(xy 551.18 83.82) (xy 551.18 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "i2c-sda-pullup-wire-v")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 576.58 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "i2c-scl-pullup-r27")
+		(property "Reference" "R27"
+			(at 579.12 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 579.12 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 576.58 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 576.58 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "i2c-scl-pullup-r27-pin1")
+		)
+		(pin "2"
+			(uuid "i2c-scl-pullup-r27-pin2")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+1V8")
+		(at 576.58 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "i2c-scl-pullup-1v8")
+		(property "Reference" "#PWR_I2C_SCL_PU"
+			(at 576.58 75.946 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 576.58 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "i2c-scl-pullup-1v8-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_I2C_SCL_PU")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 576.58 80.01) (xy 576.58 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "i2c-scl-pullup-wire-v")
 	)
 	(sheet_instances
 		(path "/"
