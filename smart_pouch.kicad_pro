@@ -632,7 +632,7 @@
         "uuid": "cf7f741c-1242-4624-8251-3a3fa2844fb7"
       }
     ],
-    "used_designators": "#PWR_XC1_GND1,#PWR_VDD_GPIO1,#PWR_SEN_VIN1,#PWR_I2C_SCL_PU1,#PWR_XC2_GND1,#PWR_VIO_GND1,#PWR_I2C_SDA_PU1,#PWR_DEC2_GND1,#PWR_COEX2_GND1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
