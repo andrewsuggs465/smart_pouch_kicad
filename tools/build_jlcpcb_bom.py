@@ -2,8 +2,11 @@
 """Build JLCPCB/LCSC BOM review files from the KiCad schematic BOM export.
 
 The KiCad export remains the source of truth for designators, values, and
-assigned footprints. This script adds preferred LCSC part numbers and, when
-network access is available, refreshes stock/MOQ/library data from JLCPCB.
+assigned footprints. LCSC part numbers are resolved in priority order:
+  1. Raw schematic LCSC column (set via KiCad symbol properties + sync script)
+  2. bom/parts_db.csv keyed by (value, footprint)  ← preferred for new parts
+  3. OVERRIDES dict below (deprecated — kept until schematic sync is complete)
+  4. Empty string (unresolved)
 """
 
 from __future__ import annotations
@@ -18,6 +21,9 @@ from typing import Any
 
 
 RAW_BOM = Path("bom/smart_pouch_kicad_bom_raw.csv")
+TECHNICAL_WORKBOOK = Path("bom/smart_pouch_technical_reference.xlsx")
+JLC_CART_WORKBOOK = Path("bom/JLC_CART.xlsx")
+DEFAULT_PARTS_DB = Path("bom/parts_db.csv")
 
 
 @dataclass(frozen=True)
@@ -30,8 +36,11 @@ class Override:
     manual: bool = False
 
 
-# Preferred parts are selected for JLCPCB PCBA availability first, with common
-# Basic parts favored for commodity passives where practical.
+# DEPRECATED: OVERRIDES is keyed by schematic ref-string (e.g. "C1,C4,C6").
+# This breaks silently when refs are renumbered or parts are added.
+# New part assignments belong in bom/parts_db.csv (value+footprint keyed).
+# Kept as a fallback until schematic LCSC fields are fully populated.
+# Do not add new entries here.
 OVERRIDES: dict[str, Override] = {
     "C1,C4,C6,C8,C12-C15,C29-C33": Override(
         "C307331",
@@ -126,16 +135,39 @@ OVERRIDES: dict[str, Override] = {
         note="SMD JST PH 2-pin battery connector replacing through-hole B2B-PH-K-S.",
     ),
     "Y1": Override("C187794", note="32 MHz 2016 crystal, 8 pF load; verify against final nRF52840 load-cap calculation."),
+    "D3": Override("C151304", note="SP3012-04UTG SIM ESD protection array."),
+    "D13-D15": Override("C8678", note="SS34 40V 3A Schottky diode SMA."),
+    "LED1,LED2": Override("C60105", note="19-237/R6GHBHC-A01/2T bicolor red/green status LED."),
+    "U3": Override("C25346894", note="nPM1300-CAAA-R7 PMIC."),
+    "U4": Override("C437655", note="BMA400 accelerometer LGA-12."),
+    "U6,U10": Override("C5137195", note="u.FL / IPEX1 SMD RF connector."),
+    "U7": Override("C239238", note="AN6520-245 2.4/5 GHz antenna."),
+    "U8": Override("C160405", note="SM06B-SRSS-TB JST SH 1.0 mm 6-pin biometric connector."),
+    "U12,U13": Override("C84817", note="MT3608 boost converter SOT-23-6."),
 }
 
 
 PART_WARNINGS: dict[str, str] = {}
 
 
+def load_parts_db(path: Path) -> dict[tuple[str, str], dict[str, str]]:
+    """Load parts_db.csv keyed by (value.lower(), footprint). Returns {} if missing."""
+    if not path.exists():
+        return {}
+    db: dict[tuple[str, str], dict[str, str]] = {}
+    with path.open(newline="", encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            key = (row["value"].lower().strip(), row["footprint"].strip())
+            db[key] = row
+    return db
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--raw", type=Path, default=RAW_BOM)
-    parser.add_argument("--out-prefix", default="bom/smart_pouch")
+    parser.add_argument("--parts-db", type=Path, default=DEFAULT_PARTS_DB,
+                        help="Path to parts_db.csv (default: bom/parts_db.csv)")
+    parser.add_argument("--board-qty", type=int, default=2, help="Number of boards for cart/order quantities.")
     parser.add_argument("--no-network", action="store_true", help="Do not refresh JLCPCB data.")
     return parser.parse_args()
 
@@ -235,20 +267,44 @@ def fetch_live_parts(lcsc_ids: set[str], no_network: bool) -> dict[str, dict[str
     return live
 
 
-def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]], board_qty: int, parts_db: dict[tuple[str, str], dict[str, str]] | None = None) -> list[dict[str, Any]]:
+    if parts_db is None:
+        parts_db = {}
     rows: list[dict[str, Any]] = []
     for raw in raw_rows:
-        refs = raw["Refs"]
+        refs = raw.get("Refs") or raw.get("Reference", "")
+        raw_value = raw.get("Value", "").strip()
+        raw_footprint = raw.get("Footprint", "").strip()
+
+        # Priority 1: LCSC from schematic (populated by sync_lcsc_to_sch.py)
+        lcsc = raw.get("LCSC Part", raw.get("LCSC", "")).strip()
+
+        # Priority 2: parts_db lookup by (value, footprint)
+        db_entry: dict[str, str] = {}
+        if not lcsc:
+            db_entry = parts_db.get((raw_value.lower(), raw_footprint), {})
+            lcsc = db_entry.get("lcsc", "").strip()
+
+        # Priority 3: OVERRIDES (deprecated fallback)
         override = OVERRIDES.get(refs, Override())
-        lcsc = override.lcsc or raw.get("LCSC Part", "").strip()
+        if not lcsc:
+            lcsc = override.lcsc
+
         live_part = live.get(lcsc, {})
-        qty_needed = len(expand_refs(refs))
+
+        # Footprint: parts_db > OVERRIDES > raw schematic
+        effective_footprint = db_entry.get("footprint", "").strip() or override.footprint or raw_footprint
+        qty_per_board = len(expand_refs(refs))
+        order_qty = qty_per_board * board_qty
         min_qty = int(live_part.get("min_qty") or 0)
-        suggested_cart_qty = max(qty_needed, min_qty or qty_needed)
+        suggested_cart_qty = max(order_qty, min_qty or order_qty)
         unit_price = dec(live_part.get("price"))
-        total = unit_price * Decimal(suggested_cart_qty) if unit_price is not None else None
+        order_total = unit_price * Decimal(order_qty) if unit_price is not None else None
+        suggested_total = unit_price * Decimal(suggested_cart_qty) if unit_price is not None else None
         note_parts = []
-        if override.note:
+        if db_entry.get("note"):
+            note_parts.append(db_entry["note"])
+        elif override.note:
             note_parts.append(override.note)
         if lcsc in PART_WARNINGS:
             note_parts.append(PART_WARNINGS[lcsc])
@@ -259,45 +315,110 @@ def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]]) 
         rows.append(
             {
                 "Designators": ",".join(expand_refs(refs)),
-                "Value": raw["Value"],
-                "KiCad Footprint": override.footprint or raw.get("Footprint", ""),
+                "Value": raw_value,
+                "KiCad Footprint": effective_footprint,
                 "LCSC Part #": lcsc,
-                "Manufacturer": live_part.get("manufacturer") or override.manufacturer or raw.get("Manufacturer", ""),
-                "MFR Part #": live_part.get("mpn") or override.mpn or raw.get("MPN", ""),
+                "Manufacturer": live_part.get("manufacturer") or db_entry.get("manufacturer") or override.manufacturer or raw.get("Manufacturer", ""),
+                "MFR Part #": live_part.get("mpn") or db_entry.get("mpn") or override.mpn or raw.get("MPN", ""),
                 "Description": live_part.get("description", ""),
                 "Package": live_part.get("package", ""),
                 "Library Type": live_part.get("library_type", ""),
                 "Stock": live_part.get("stock", ""),
                 "Min Qty": min_qty or "",
                 "Reel Qty": live_part.get("reel_qty", ""),
-                "Qty Needed": qty_needed,
+                "Board Qty": board_qty,
+                "Qty Per Board": qty_per_board,
+                "Order Qty": order_qty,
                 "Suggested Cart Qty": suggested_cart_qty if lcsc else "",
                 "Unit Price": str(unit_price) if unit_price is not None else "",
-                "Suggested Cart Total": str(total) if total is not None else "",
+                "Order Total": str(order_total) if order_total is not None else "",
+                "Suggested Cart Total": str(suggested_total) if suggested_total is not None else "",
                 "Notes": " ".join(note_parts),
             }
         )
     return rows
 
 
-def write_csv(path: Path, rows: list[dict[str, Any]], headers: list[str]) -> None:
+
+def _style_sheet(ws: Any, sheet_name: str) -> None:
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.table import Table, TableStyleInfo
+
+    header_fill = PatternFill("solid", fgColor="1F4E78")
+    header_font = Font(color="FFFFFF", bold=True)
+    thin = Side(style="thin", color="D9E2F3")
+    border = Border(bottom=thin)
+
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = ws.dimensions
+    for cell in ws[1]:
+        cell.fill = header_fill
+        cell.font = header_font
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = border
+    for data_row in ws.iter_rows(min_row=2):
+        for cell in data_row:
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+    for col_idx in range(1, ws.max_column + 1):
+        letter = get_column_letter(col_idx)
+        max_len = max(
+            (min(len("" if cell.value is None else str(cell.value)), 70) for cell in ws[letter]),
+            default=0,
+        )
+        ws.column_dimensions[letter].width = max(10, min(max_len + 2, 55))
+
+    if ws.max_row >= 2 and ws.max_column >= 2:
+        table_ref = f"A1:{get_column_letter(ws.max_column)}{ws.max_row}"
+        table = Table(displayName=f"{sheet_name.replace(' ', '')}Table", ref=table_ref)
+        table.tableStyleInfo = TableStyleInfo(
+            name="TableStyleMedium2",
+            showFirstColumn=False,
+            showLastColumn=False,
+            showRowStripes=True,
+            showColumnStripes=False,
+        )
+        ws.add_table(table)
+
+
+def write_single_sheet_xlsx(path: Path, sheet_name: str, rows: list[dict[str, Any]], headers: list[str]) -> None:
+    try:
+        from openpyxl import Workbook
+    except Exception as exc:  # pragma: no cover - depends on local install
+        print(f"Warning: could not write {path}: openpyxl unavailable: {exc}")
+        return
+
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=headers, extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows(rows)
+    wb = Workbook()
+    ws = wb.active
+    ws.title = sheet_name[:31]
+    ws.append(headers)
+    for row in rows:
+        ws.append([row.get(header, "") for header in headers])
+    _style_sheet(ws, sheet_name)
+    wb.save(path)
 
 
 def main() -> None:
     args = parse_args()
     raw_rows = read_csv(args.raw)
-    lcsc_ids = {
-        (OVERRIDES.get(row["Refs"], Override()).lcsc or row.get("LCSC Part", "").strip())
-        for row in raw_rows
-    }
-    lcsc_ids.discard("")
+    parts_db = load_parts_db(args.parts_db)
+
+    # Collect LCSC IDs from all three priority sources for the live lookup.
+    lcsc_ids: set[str] = set()
+    for row in raw_rows:
+        lcsc = row.get("LCSC Part", row.get("LCSC", "")).strip()
+        if not lcsc:
+            db_entry = parts_db.get((row.get("Value", "").lower().strip(), row.get("Footprint", "").strip()), {})
+            lcsc = db_entry.get("lcsc", "").strip()
+        if not lcsc:
+            refs = row.get("Refs") or row.get("Reference", "")
+            lcsc = OVERRIDES.get(refs, Override()).lcsc
+        if lcsc:
+            lcsc_ids.add(lcsc)
+
     live = fetch_live_parts(lcsc_ids, args.no_network)
-    rows = build_rows(raw_rows, live)
+    rows = build_rows(raw_rows, live, args.board_qty, parts_db)
 
     review_headers = [
         "Designators",
@@ -312,50 +433,20 @@ def main() -> None:
         "Stock",
         "Min Qty",
         "Reel Qty",
-        "Qty Needed",
+        "Board Qty",
+        "Qty Per Board",
+        "Order Qty",
         "Suggested Cart Qty",
         "Unit Price",
+        "Order Total",
         "Suggested Cart Total",
         "Notes",
     ]
-    write_csv(Path(f"{args.out_prefix}_jlcpcb_bom_review.csv"), rows, review_headers)
 
-    assembly_rows = [
-        {
-            "Comment": row["Value"],
-            "Designator": row["Designators"],
-            "Footprint": row["KiCad Footprint"],
-            "LCSC Part #": row["LCSC Part #"],
-        }
-        for row in rows
-        if row["LCSC Part #"]
+    cart_headers = [
+        "Parts Type", "JLCPCB Part #", "MFR Part #", "Description",
+        "Unit Price", "Qty", "Total Price",
     ]
-    write_csv(
-        Path(f"{args.out_prefix}_jlcpcb_assembly_bom.csv"),
-        assembly_rows,
-        ["Comment", "Designator", "Footprint", "LCSC Part #"],
-    )
-
-    # Some JLCPCB importer flows try to match on manufacturer part numbers if
-    # description/MPN-like columns are present. This stripped upload BOM keeps
-    # the JLC part number unambiguous.
-    strict_upload_rows = [
-        {
-            "Designator": row["Designators"],
-            "Quantity": row["Qty Needed"],
-            "Comment": row["Value"],
-            "Footprint": row["KiCad Footprint"],
-            "JLCPCB Part #": row["LCSC Part #"],
-        }
-        for row in rows
-        if row["LCSC Part #"]
-    ]
-    write_csv(
-        Path(f"{args.out_prefix}_jlcpcb_upload_bom.csv"),
-        strict_upload_rows,
-        ["Designator", "Quantity", "Comment", "Footprint", "JLCPCB Part #"],
-    )
-
     cart_rows = [
         {
             "Parts Type": row["Library Type"],
@@ -363,26 +454,18 @@ def main() -> None:
             "MFR Part #": row["MFR Part #"],
             "Description": row["Description"],
             "Unit Price": row["Unit Price"],
-            "Qty": row["Suggested Cart Qty"],
-            "Total Price": row["Suggested Cart Total"],
+            "Qty": row["Order Qty"],
+            "Total Price": row["Order Total"],
         }
         for row in rows
         if row["LCSC Part #"]
     ]
-    write_csv(
-        Path(f"{args.out_prefix}_jlcpcb_cart.csv"),
-        cart_rows,
-        ["Parts Type", "JLCPCB Part #", "MFR Part #", "Description", "Unit Price", "Qty", "Total Price"],
-    )
 
-    unresolved_rows = [row for row in rows if not row["LCSC Part #"] or "Manual review required" in row["Notes"]]
-    write_csv(Path(f"{args.out_prefix}_jlcpcb_unresolved.csv"), unresolved_rows, review_headers)
+    write_single_sheet_xlsx(JLC_CART_WORKBOOK, "Cart", cart_rows, cart_headers)
+    write_single_sheet_xlsx(TECHNICAL_WORKBOOK, "Reference", rows, review_headers)
 
-    print(f"Wrote {args.out_prefix}_jlcpcb_bom_review.csv ({len(rows)} lines)")
-    print(f"Wrote {args.out_prefix}_jlcpcb_assembly_bom.csv ({len(assembly_rows)} lines)")
-    print(f"Wrote {args.out_prefix}_jlcpcb_upload_bom.csv ({len(strict_upload_rows)} lines)")
-    print(f"Wrote {args.out_prefix}_jlcpcb_cart.csv ({len(cart_rows)} lines)")
-    print(f"Wrote {args.out_prefix}_jlcpcb_unresolved.csv ({len(unresolved_rows)} lines)")
+    print(f"Wrote {JLC_CART_WORKBOOK} ({len(cart_rows)} parts)")
+    print(f"Wrote {TECHNICAL_WORKBOOK} ({len(rows)} parts)")
 
 
 if __name__ == "__main__":

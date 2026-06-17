@@ -1,0 +1,49 @@
+value,footprint,lcsc,manufacturer,mpn,note
+100nF,Capacitor_SMD:C_0402_1005Metric,C307331,,,100 nF 0402 X7R 50 V; chosen over 16 V parts for rail-margin safety.
+1uF,Capacitor_SMD:C_0402_1005Metric,C52923,,,1 uF 0402 X5R 25 V.
+10uF,Capacitor_SMD:C_0805_2012Metric,C15850,,,10 uF 0805 X5R 25 V.
+22u 25V,Capacitor_SMD:C_1210_3225Metric,C52306,,,22 uF 1210 X5R 25 V.
+0.6pF,Capacitor_SMD:C_0402_1005Metric,C778333,,,"RF antenna matching capacitor. Original schematic said 0.5uF, but this is the nRF52840 antenna match; using stocked 0.6pF 0402 C0G."
+0.8pF,Capacitor_SMD:C_0402_1005Metric,C3875120,,,"RF antenna matching capacitor. Original schematic said 0.8uF, but this is the nRF52840 antenna match; using 0.8pF 0402 C0G."
+12pF,Capacitor_SMD:C_0402_1005Metric,C1547,,,12 pF 0402 C0G/NP0 50 V.
+LED,easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V,C2843891,,,White 3030 LED; verify current/thermal target.
+PRTR5V0U2X,Package_TO_SOT_SMD:SOT-143,C2827688,,,PRTR5V0U2X USB ESD.
+XH-2P-SMD,easyeda2kicad:CONN-SMD_2P-P2.54_XH2.54-2AB,C146125,,,SMD 2-pin XH-style connector for +12 V siren/load output; intentionally different from battery PH connector.
+2.54-3P-LT,easyeda2kicad:CONN-SMD_2.54-3P-LT,C2681544,,,SMD 3-pin 2.54 mm connector selected for the trimmer/control path.
+SIM_Card,easyeda2kicad:SIM-SMD_SMN-303,C266888,,,SIM card connector SMN-303.
+10uH,easyeda2kicad:IND-SMD_L4.0-W4.0,C2849472,,,"10 uH shielded power inductor, 4x4 mm class."
+2.2uH,easyeda2kicad:IND-SMD_L4.0-W4.0_NRS4018T,C92959,,,"2.2 uH shielded power inductor, 4x4 mm class."
+4.7nH,easyeda2kicad:L0402-R-RD,C86065,,,"4.7 nH RF matching inductor; schematic footprint should be 0402, not the 4x4 power inductor footprint."
+USB_C_Plug_USB2.0,easyeda2kicad:TYPE-C-SMD_TYPE-C-6P_1,C456012,,,USB-C 6-pin receptacle.
+BSS84,Package_TO_SOT_SMD:SOT-23,C3018484,,,BSS84 P-channel MOSFET.
+2N7002,Package_TO_SOT_SMD:SOT-23,C8545,,,2N7002 N-channel MOSFET.
+47k,Resistor_SMD:R_0402_1005Metric,C25792,,,47 kOhm 0402 1%.
+150k,Resistor_SMD:R_0402_1005Metric,C22369540,,,150 kOhm 0402 1%.
+10k,Resistor_SMD:R_0402_1005Metric,C49330233,,,10 kOhm 0402 1%; min-1 alternative to Basic C25744.
+330,Resistor_SMD:R_0402_1005Metric,C25104,,,330 Ohm 0402 1%; schematic footprint was blank.
+4.7,Resistor_SMD:R_0402_1005Metric,C25169,,,4.7 Ohm 0402 5%; verify tolerance is acceptable.
+5.1k,Resistor_SMD:R_0402_1005Metric,C25905,,,5.1 kOhm 0402 1%.
+22R,Resistor_SMD:R_0402_1005Metric,C100318,,,22 Ohm 0402 1%.
+100R,Resistor_SMD:R_0402_1005Metric,C25076,,,100 Ohm 0402 1%.
+191k,Resistor_SMD:R_0402_1005Metric,C159084,,,191 kOhm 0402 1%.
+240k,Resistor_SMD:R_0402_1005Metric,C64043,,,240 kOhm 0402 1%.
+100k,Resistor_SMD:R_0402_1005Metric,C144809,,,100 kOhm 0402 1%; min-1 alternative to Basic C25741.
+4.7k,Resistor_SMD:R_0402_1005Metric,C25900,,,4.7 kOhm 0402 1%.
+10k,easyeda2kicad:RES-ADJ-SMD_3P-L3.0-W3.8-P1.75-BR,C719176,,,10 kOhm SMD trimmer selected; schematic/spec did not define a previous resistance value.
+SW_Push,easyeda2kicad:KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6,C139797,,,SMD tactile switch imported with easyeda2kicad.
+Thermistor,Resistor_SMD:R_0402_1005Metric,C77131,,,10 kOhm 0402 NTC thermistor.
+nRF52840,Package_DFN_QFN:Nordic_AQFN-73-1EP_7x7mm_P0.5mm,C190794,,,nRF52840-QIAA-R.
+NRF9151-LACA-R7,easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-LACA-R7,C22397843,,,nRF9151-LACA-R7 selected.
+SM04B-SRSS-TB,easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN,C160404,,,SMD JST-SH 1.0 mm 4-pin UART connector.
+HX PZ1.27-2x5P TP,easyeda2kicad:HDR-SMD_10P-P1.27-V-M-R2-C5-LS5.5_1,C41376037,,,SMD 2x5 1.27 mm SWD header replacing through-hole header.
+B2B-PH-SM4-TB,easyeda2kicad:CONN-SMD_B2B-PH-SM4-TB-LF-SN,C160352,,,SMD JST PH 2-pin battery connector replacing through-hole B2B-PH-K-S.
+32MHz,easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL,C187794,,,"32 MHz 2016 crystal, 8 pF load; verify against final nRF52840 load-cap calculation."
+SP3012-04UTG,easyeda2kicad:UDFN-10_L2.5-W1.0-P0.50-BL,C151304,,,SP3012-04UTG SIM ESD protection array.
+SS34_C8678,easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD,C8678,,,SS34 40V 3A Schottky diode SMA.
+19-237/R6GHBHC-A01/2T,easyeda2kicad:LED-ARRAY-SMD_4P-L1.6-W1.6-BL_1,C60105,,,19-237/R6GHBHC-A01/2T bicolor red/green status LED.
+NPM1300,easyeda2kicad:BGA-35_L3.1-W2.4-R5-C7-P0.42_NPM1300-CAAA-R,C25346894,,,nPM1300-CAAA-R7 PMIC.
+BMA400,easyeda2kicad:LGA-12_L2.0-W2.0-P0.50-BL,C437655,,,BMA400 accelerometer LGA-12.
+BWU.FL-IPEX1,easyeda2kicad:IPEX-SMD_BWIPX-1-001E,C5137195,,,u.FL / IPEX1 SMD RF connector.
+AN6520-245,easyeda2kicad:ANT-SMD_L6.5-W2.0,C239238,,,AN6520-245 2.4/5 GHz antenna.
+SEN0348_CONN,easyeda2kicad:CONN-SMD_SM06B-SRSS-TB-LF-SN,C160405,,,SM06B-SRSS-TB JST SH 1.0 mm 6-pin biometric connector.
+MT3608,easyeda2kicad:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL,C84817,,,MT3608 boost converter SOT-23-6.

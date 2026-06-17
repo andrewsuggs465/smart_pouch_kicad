@@ -1,58 +1,50 @@
-# Smart Pouch Hardware Review Handoff
+# Smart Pouch
 
-This repository contains the KiCad design, current JLCPCB BOM outputs, project
-specification, and component datasheets for the Smart Pouch PCB.
+KiCad schematic and PCB for the Smart Pouch hardware.
 
-## Current Design Files
+## Design files
 
-- `smart_pouch.kicad_sch` - current schematic
-- `smart_pouch.kicad_pcb` - current PCB file
-- `smart_pouch.kicad_pro` - KiCad project
-- `sym-lib-table` - project symbol library table
+- `smart_pouch.kicad_sch` — schematic
+- `smart_pouch.kicad_pcb` — PCB layout
+- `docs/spec/securepouch_spec.tex` — product specification
 
-## BOM and Ordering Files
+## BOM workflow
 
-Final BOM files are in `bom/`.
+Part assignments live in two places:
+- **Schematic** — each symbol has an `LCSC Part` property
+- **`bom/parts_db.csv`** — keyed by `value + footprint`; add new part types here
 
-- `bom/smart_pouch_jlcpcb_upload_bom.csv` - clean JLCPCB PCBA upload BOM
-- `bom/smart_pouch_jlcpcb_cart_sheet.xlsx` - workbook for JLCPCB cart/order review
-- `bom/smart_pouch_technical_reference.xlsx` - technical reference workbook
-- `bom/smart_pouch_jlcpcb_bom_review.csv` - stock/MOQ/library review
-- `bom/smart_pouch_jlcpcb_cart.csv` - cart-style CSV
-
-For JLCPCB upload, start with `bom/smart_pouch_jlcpcb_upload_bom.csv`.
-Map `JLCPCB Part #` as the LCSC/JLC part-number column.
-
-## Documentation
-
-- `docs/spec/securepouch_spec.pdf` - project specification PDF
-- `docs/spec/securepouch_spec.tex` - source for the specification
-- `docs/datasheets/` - component datasheets used during review
-
-## Reports
-
-- `reports/ERC_codex_after_bom_moq.rpt` - latest ERC report, 0 violations
-
-## Scripts
-
-- `tools/build_jlcpcb_bom.py` - regenerates the JLCPCB BOM outputs from the KiCad BOM export
-
-Typical refresh flow:
-
+Regenerate after schematic changes:
 ```bash
-flatpak run --command=kicad-cli org.kicad.KiCad sch export bom \
-  --output bom/smart_pouch_kicad_bom_raw.csv \
-  --fields 'Reference,Value,Footprint,QUANTITY,Manufacturer,MPN,LCSC Part,Datasheet,DNP' \
-  --labels 'Refs,Value,Footprint,Qty,Manufacturer,MPN,LCSC Part,Datasheet,DNP' \
-  --group-by 'Value,Footprint,Manufacturer,MPN,LCSC Part,DNP' \
-  --sort-field Reference \
-  --exclude-dnp smart_pouch.kicad_sch
-
-python3 tools/build_jlcpcb_bom.py
+bash tools/make_bom.sh                 # live JLCPCB pricing/stock
+bash tools/make_bom.sh --no-network    # offline
+bash tools/make_bom.sh --board-qty 5  # change order quantity (default 2)
 ```
 
-## Archive
+Outputs written to `bom/`:
+- `JLC_CART.xlsx` — upload this to the JLCPCB BOM tool to order parts
+- `smart_pouch_technical_reference.xlsx` — internal reference with stock and pricing
 
-Old ERC reports, temporary netlists, KiCad backups, LaTeX build artifacts, and
-legacy spreadsheets are stored under `archive/` so they are available if needed
-without cluttering the review path.
+## Adding a new part
+
+Set the `LCSC Part` property on the symbol in KiCad, **or** add a row to `bom/parts_db.csv`:
+```
+value,footprint,lcsc,manufacturer,mpn,note
+100nF,Capacitor_SMD:C_0402_1005Metric,C307331,,,
+```
+
+To find the right LCSC number, run the part selector — it queries JLCPCB and ranks candidates:
+```bash
+python3 tools/select_parts.py --dry-run       # preview proposals
+python3 tools/select_parts.py --interactive   # approve each one interactively
+```
+
+## Other tools
+
+```bash
+# Sync LCSC numbers from parts_db back into schematic symbol properties
+python3 tools/sync_lcsc_to_sch.py
+
+# Import a new symbol/footprint from LCSC into the easyeda2kicad library
+easyeda2kicad --lcsc C<number> --output ~/Documents/Kicad/easyeda2kicad/
+```
