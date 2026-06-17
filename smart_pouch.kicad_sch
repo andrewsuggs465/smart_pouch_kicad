@@ -12780,7 +12780,7 @@
 		)
 		(uuid "21338ccf-bc63-44e3-ae62-5d43adc563a0")
 	)
-	(text "3608 Boost Circuit 30V\n"
+	(text "3608 Boost Circuit 15V\n"
 		(exclude_from_sim no)
 		(at 312.166 121.412 0)
 		(effects
