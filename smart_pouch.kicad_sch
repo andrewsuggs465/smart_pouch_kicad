@@ -8416,7 +8416,7 @@
 					)
 				)
 			)
-			(property "Value" "NRF9151-SICA"
+			(property "Value" "NRF9151-LACA-R7"
 				(at -1.27 76.2 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -18558,7 +18558,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "easyeda2kicad:KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6"
 			(at 518.16 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -19660,7 +19660,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "XH-2P-SMD"
 			(at 271.78 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19670,7 +19670,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "easyeda2kicad:CONN-SMD_2P-P2.54_XH2.54-2AB"
 			(at 267.97 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -20569,7 +20569,7 @@
 				)
 			)
 		)
-		(property "Value" "NRF9151-SICA"
+		(property "Value" "NRF9151-LACA-R7"
 			(at 95.25 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21447,7 +21447,7 @@
 				)
 			)
 		)
-		(property "Value" "B2B-PH-K-S"
+		(property "Value" "B2B-PH-SM4-TB"
 			(at 168.91 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21457,7 +21457,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_B2B-PH-K-S"
+		(property "Footprint" "easyeda2kicad:CONN-SMD_B2B-PH-SM4-TB-LF-SN"
 			(at 171.45 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -21468,7 +21468,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/PH-Connectors_JST_B2B-PH-K-S-LF-SN_B2B-PH-K-S-LF-SN_C131337.html"
+		(property "Datasheet" "https://lcsc.com/product-detail/C160352.html"
 			(at 171.45 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -21479,7 +21479,7 @@
 				)
 			)
 		)
-		(property "Description" "Connector Header 2 position 2mm Pitch 2A Through Hole"
+		(property "Description" "Connector Header 2 position 2mm Pitch 2A SMD"
 			(at 171.45 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -21501,7 +21501,7 @@
 				)
 			)
 		)
-		(property "MPN" "B2B-PH-K-S(LF)(SN)"
+		(property "MPN" "B2B-PH-SM4-TB(LF)(SN)"
 			(at 171.45 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -21512,7 +21512,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C131337"
+		(property "LCSC Part" "C160352"
 			(at 171.45 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -21962,7 +21962,7 @@
 				)
 			)
 		)
-		(property "Value" "ZX-PZ1.27-2-5PZZ"
+		(property "Value" "HX PZ1.27-2x5P TP"
 			(at 215.9 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21972,7 +21972,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_10P-P1.27-V-M-R2-C5-S1.27"
+		(property "Footprint" "easyeda2kicad:HDR-SMD_10P-P1.27-V-M-R2-C5-LS5.5_1"
 			(at 215.9 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -21983,7 +21983,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C7501289.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C41376037.pdf"
 			(at 215.9 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -22005,7 +22005,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Megastar(兆星)"
+		(property "Manufacturer" "hanxia"
 			(at 215.9 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -22016,7 +22016,7 @@
 				)
 			)
 		)
-		(property "MPN" "ZX-PZ1.27-2-5PZZ"
+		(property "MPN" "HX PZ1.27-2x5P TP"
 			(at 215.9 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -22027,7 +22027,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7501289"
+		(property "LCSC Part" "C41376037"
 			(at 215.9 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -22579,7 +22579,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_Potentiometer_Trim"
+		(property "Value" "10k"
 			(at 394.97 76.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22590,7 +22590,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical"
+		(property "Footprint" "easyeda2kicad:RES-ADJ-SMD_3P-L3.0-W3.8-P1.75-BR"
 			(at 397.51 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -25318,7 +25318,7 @@
 				)
 			)
 		)
-		(property "Value" "0.8uF"
+		(property "Value" "0.8pF"
 			(at 234.95 187.96 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25568,7 +25568,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 342.9 236.728 90)
 			(hide yes)
 			(show_name no)
@@ -27074,7 +27074,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_LQH44PN2R2MP0L"
+		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0"
 			(at 52.07 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -27525,7 +27525,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x03_Pin"
+		(property "Value" "2.54-3P-LT"
 			(at 395.732 49.022 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27535,7 +27535,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+		(property "Footprint" "easyeda2kicad:CONN-SMD_2.54-3P-LT"
 			(at 392.43 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -32675,7 +32675,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_LQH44PN2R2MP0L"
+		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_NRS4018T"
 			(at 534.67 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -33547,7 +33547,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 342.9 241.808 90)
 			(hide yes)
 			(show_name no)
@@ -34044,7 +34044,7 @@
 				)
 			)
 		)
-		(property "Value" "0.5uF"
+		(property "Value" "0.6pF"
 			(at 254 187.96 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35163,7 +35163,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 342.9 239.268 90)
 			(hide yes)
 			(show_name no)
@@ -35922,7 +35922,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_LQH44PN2R2MP0L"
+		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_NRS4018T"
 			(at 426.72 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -36244,7 +36244,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_LQH44PN2R2MP0L"
+		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0"
 			(at 52.07 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -36403,7 +36403,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:IND-SMD_L4.0-W4.0_LQH44PN2R2MP0L"
+		(property "Footprint" "easyeda2kicad:L0402-R-RD"
 			(at 247.65 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -37495,7 +37495,7 @@
 				)
 			)
 		)
-		(property "Value" "ZX-PZ1.27-2-5PZZ"
+		(property "Value" "HX PZ1.27-2x5P TP"
 			(at 215.9 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37505,7 +37505,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_10P-P1.27-V-M-R2-C5-S1.27"
+		(property "Footprint" "easyeda2kicad:HDR-SMD_10P-P1.27-V-M-R2-C5-LS5.5_1"
 			(at 215.9 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -37516,7 +37516,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C7501289.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C41376037.pdf"
 			(at 215.9 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -37538,7 +37538,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Megastar(兆星)"
+		(property "Manufacturer" "hanxia"
 			(at 215.9 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -37549,7 +37549,7 @@
 				)
 			)
 		)
-		(property "MPN" "ZX-PZ1.27-2-5PZZ"
+		(property "MPN" "HX PZ1.27-2x5P TP"
 			(at 215.9 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -37560,7 +37560,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7501289"
+		(property "LCSC Part" "C41376037"
 			(at 215.9 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -37793,7 +37793,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B4B-XH-A"
+		(property "Value" "SM04B-SRSS-TB"
 			(at 223.52 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37804,7 +37804,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_B4B-XH-A-LF-SN"
+		(property "Footprint" "easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN"
 			(at 215.9 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -37815,7 +37815,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/_JST-Sales-America_B4B-XH-A-LF-SN_JST-Sales-America-B4B-XH-A-LF-SN_C144395.html"
+		(property "Datasheet" "https://lcsc.com/product-detail/C160404.html"
 			(at 215.9 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -37848,7 +37848,7 @@
 				)
 			)
 		)
-		(property "MPN" "B4B-XH-A(LF)(SN)"
+		(property "MPN" "SM04B-SRSS-TB(LF)(SN)"
 			(at 215.9 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -37859,7 +37859,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C144395"
+		(property "LCSC Part" "C160404"
 			(at 215.9 55.88 0)
 			(hide yes)
 			(show_name no)

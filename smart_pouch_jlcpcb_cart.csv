@@ -1,0 +1,50 @@
+Parts Type,JLCPCB Part #,MFR Part #,Description,Unit Price,Qty,Total Price
+Basic,C307331,CL05B104KB54PNC,100nF 50V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0076,13,0.0988
+Basic,C52923,CL05A105KA5NQNC,1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0142,5,0.0710
+Basic,C15850,CL21A106KAYNNNE,10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0643,5,0.3215
+Basic,C15850,CL21A106KAYNNNE,10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0643,2,0.1286
+Extended,C52306,CL32A226KAJNNNE,22uF 25V X5R ±10% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.1814,2,0.3628
+Extended,C778333,C0402C0G0R6B500NTB,0.6pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0029,1,0.0029
+Extended,C3875120,C0402C0G500-0R8BNP,0.8pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0105,1,0.0105
+Basic,C1547,0402CG120J500NT,12pF 50V C0G ±5% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0036,2,0.0072
+Extended,C160352,B2B-PH-SM4-TB(LF)(SN),"-25℃~+85℃ 1 100V 1x2P 2 2A 2P 2mm 6.6mm 7.95mm 7mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount,Vertical Tin UL94V-0 SMD,P=2mm Wire To Board Connector ROHS",0.3586,1,0.3586
+Extended,C2843891,XL-3030UWC-1W-3V,-40℃~+85℃ 120° 1W 3.4V 350mA 6500K~7000K Discrete Diode Top-mount White Yellow Lens SMD3030-2P LED Indication - Discrete ROHS,0.042,8,0.336
+Extended,C151304,SP3012-04UTG,-40℃~+125℃ 0.5pF 1.5uA 4A@8/20us 5V 8.4V ESD Four channels IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 UDFN-10(1x2.5) ESD and Surge Protection (TVS/ESD) ROHS,0.2974,1,0.2974
+Extended,C2827688,PRTR5V0U2X,-55℃~+125℃ 0.3pF、0.8pF 100W 10V、15V 5V 6.5V 6A 80nA ESD IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 Three channels Unidirectional SOT-143 ESD and Surge Protection (TVS/ESD) ROHS,0.0609,1,0.0609
+Basic,C8678,SS34,-55℃~+125℃ 3A 40V 500uA@40V 550mV@3A Independent SMA(DO-214AC) Schottky Diodes ROHS,0.0301,3,0.0903
+Extended,C146125,XH-2PVertical welding,"-25℃~+85℃ 1 12mm 1x2P 2 2.5mm 250V 2P 3A 6mm 7.8mm Beige LCP Phosphor bronze Surface Mount,Vertical Tin UL94V-0 XH SMD,P=2.5mm Wire To Board Connector ROHS",0.0669,1,0.0669
+Extended,C2681544,2.54-3P LT,"-25℃~+85℃ 1 1x3P 2.5mm 250V 3 3A 3P Beige Brass LCP Surface Mount,Vertical Tin UL94V-0 XH SMD,P=2.5mm Wire To Board Connector ROHS",0.0814,1,0.0814
+Extended,C266888,SMN-303,-25℃~+85℃ 1.37mm Connector and Ejector Nano-SIM Card Push-Push With Card Detect SMD SIM Card Connectors ROHS,0.4894,1,0.4894
+Extended,C2849472,PNLS4030-100M 10UH,"10uH 120mΩ 2A 2A Magnetic Shielded Inductor ±20% SMD,4x4mm Power Inductors ROHS",0.0521,2,0.1042
+Extended,C92959,NRS4018T2R2MDGJ,"2.2A 2.2uH 3A 42mΩ ±20% SMD,4x4mm Power Inductors ROHS",0.0886,2,0.1772
+Extended,C86065,LQG15HS4N7S02D,160mΩ 4.7nH 6GHz 700mA 8@100MHz Multilayer inductor 0402 Inductors (SMD) ROHS,0.023,1,0.023
+Extended,C60105,19-237/R6GHBHC-A01/2T,"120° Common Anode SMD-4P,1.6x1.6mm RGB LEDs ROHS",0.0624,2,0.1248
+Extended,C456012,TYPE-C 6P,"-40℃~+85℃ 1 3,000 Cycles 3A 5V 6P Black Female Surface Mount, Right Angle Type-C SMD USB Connectors ROHS",0.0385,1,0.0385
+Extended,C3018484,BSS84,-55℃~+150℃ 1 P-Channel 10pF 10Ω@5V 130mA 225mW 2V 30pF 50V 5pF SOT-23 MOSFETs ROHS,0.0223,3,0.0669
+Basic,C8545,2N7002,1 N-channel 115mA 2.5V 225mW 50pF 5pF 5Ω@10V 60V SOT-23 MOSFETs ROHS,0.0154,3,0.0462
+Basic,C25792,0402WGF4702TCE,-55℃~+155℃ 47kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,1,0.0012
+Extended,C22369540,RCA02150KFLF,-55℃~+155℃ 150kΩ 50V 62.5mW Thick Film Resistor ±1% ±200ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0004,1,0.0004
+Basic,C25744,0402WGF1002TCE,-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,8956,10.7472
+Basic,C25104,0402WGF3300TCE,-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,3,0.0036
+Extended,C25169,0402WGJ047JTCE,-55℃~+155℃ 4.7Ω 50V 62.5mW Thick Film Resistor ±200ppm/℃ ±5% 0402 Chip Resistor - Surface Mount ROHS,0.0016,8,0.0128
+Basic,C25905,0402WGF5101TCE,-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0009,1,0.0009
+Extended,C100318,CR0402FF22R0G,-55℃~+125℃ 22Ω 50V 62.5mW Thick Film Resistor ±1% ±200ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0006,2,0.0012
+Basic,C25076,0402WGF1000TCE,-55℃~+155℃ 100Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,3,0.0036
+Extended,C159084,RTT021913FTH,-55℃~+155℃ 191kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0007,1,0.0007
+Extended,C64043,0402WGF2403TCE,-55℃~+155℃ 240kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.001,1,0.001
+Basic,C25741,0402WGF1003TCE,-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0011,10000,11.0000
+Basic,C25900,0402WGF4701TCE,-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0011,2,0.0022
+Extended,C719176,TC33X-2-103E,"1 10kΩ 150mW ±25% ±250ppm/℃ SMD-3P,3.8x3.6mm Potentiometers, Variable Resistors ROHS",0.1065,1,0.1065
+Extended,C139797,SKRPACE010,"-30℃~+85℃ 16V 2.5mm 2.6N 3.2mm 4.2mm 50,000 cycles 50mA J-Lead Oval button SPST-NO Surface Mount,Vertical SMD-4P,4.2x3.2mm Tactile Switches ROHS",0.0629,1,0.0629
+Extended,C77131,NCP15XH103F03RC,-40℃~+125℃ 0.5mm 100mW 10kΩ 1mW/℃ 1mm 310uA 3380K 3434K 3455K ±1% ±1% 0402 NTC Thermistors ROHS,0.0199,1,0.0199
+Extended,C190794,NRF52840-QIAA-R,-95dBm 1.7V~5.5V 2.4GHz 2.4GHz~2.4835GHz 2Mbps 4.82mA 6.26mA 8dBm SPI、USB、UART、ADC、I2S、PWM ZigBee、Bluetooth、LoRa、ISM transceiver AQFN-73-EP(7x7) RF Transceiver ICs ROHS,5.7384,1,5.7384
+Extended,C22397843,nRF9151-LACA-R7,LGA-113(12.1x11.1) RF Modules ROHS,16.1428,1,16.1428
+Extended,C25346894,NPM1300-CAAA-R7,WLCSP-35(2.4x3.1) Power Management - Specialized ROHS,2.5632,1,2.5632
+Extended,C437655,BMA400,"-40℃~+85℃ 1.71V~3.6V 12bit 160nA 1KB Accelerometer SPI、I2C X,Y,Z ±16g LGA-12(2x2) Accelerometers ROHS",2.3952,1,2.3952
+Extended,C5137195,BWU.FL-IPEX1,1 1.25mm 2mm 50Ω 6GHz Board Side IPEX Male Pin SMD Coaxial Connectors (RF) ROHS,0.0398,2,0.0796
+Extended,C239238,AN6520-245,-40℃~+85℃ 0.5dBi 1mm 2 2.2mm 2.45GHz 200MHz 3W 50Ω 6.5mm SMD Antennas ROHS,0.5734,1,0.5734
+Extended,C160405,SM06B-SRSS-TB(LF)(SN),"-25℃~+85℃ 1 1A 1mm 1x6P 2.9mm 4.32mm 50V 6 6P 8mm Auxiliary Solder Pin Copper alloy PA SH Surface Mount, Right Angle Tin UL94V-0 White SMD,P=1mm,卧贴 Wire To Board Connector ROHS",0.2998,1,0.2998
+Extended,C160404,SM04B-SRSS-TB(LF)(SN),"-25℃~+85℃ 1 1A 1mm 1x4P 2.9mm 4 4.32mm 4P 50V 6mm Auxiliary Solder Pin Copper alloy PA SH Surface Mount, Right Angle Tin UL94V-0 White SMD,P=1mm,卧贴 Wire To Board Connector ROHS",0.2245,1,0.2245
+Extended,C41376037,HX PZ1.27-2x5P TP,"-40℃~+105℃ 1.27mm 1.27mm 10P 1A 1mm 2 2x5P 4mm 500V Black Brass Gold Pin Header Surface Mount,Vertical SMD,P=1.27mm Pin Headers ROHS",0.096,2,0.192
+Extended,C84817,MT3608,-40℃~+85℃ 1 1.2MHz 100uA、1.6mA 2A 2V~24V Adjustable Boost Boost Built-in No SOT-23-6 DC-DC Converters ROHS,0.08,2,0.16
+Extended,C187794,Q22FA12800025,-20℃~+75℃ 32MHz 60Ω 8pF Crystal Oscillator ±10ppm ±10ppm SMD2016-4P Crystals ROHS,0.2321,1,0.2321
