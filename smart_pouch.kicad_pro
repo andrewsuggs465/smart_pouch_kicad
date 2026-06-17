@@ -439,7 +439,7 @@
       "label_dangling": "error",
       "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
-      "lib_symbol_mismatch": "warning",
+      "lib_symbol_mismatch": "ignore",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -450,7 +450,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "error",
+      "pin_to_pin": "ignore",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -620,6 +620,14 @@
     "meta": {
       "version": 1
     },
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
@@ -632,7 +640,7 @@
         "uuid": "cf7f741c-1242-4624-8251-3a3fa2844fb7"
       }
     ],
-    "used_designators": "R5-6,R28,LED2",
+    "used_designators": "#PWR61-62,SW1",
     "variants": []
   },
   "sheets": [

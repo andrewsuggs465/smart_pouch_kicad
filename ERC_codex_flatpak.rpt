@@ -1,0 +1,54 @@
+ERC report (2026-06-17T14:22:25, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
+
+***** Sheet /
+[lib_symbol_mismatch]: Symbol 'VBAT' doesn't match copy in library 'andrew'
+    ; warning
+    @(34.29 mm, 31.75 mm): Symbol #PWR68 [VBAT]
+[lib_symbol_mismatch]: Symbol 'SS34_C8678' doesn't match copy in library 'easyeda2kicad'
+    ; warning
+    @(72.39 mm, 31.75 mm): Symbol D14 [SS34_C8678]
+[lib_symbol_mismatch]: Symbol 'VBAT' doesn't match copy in library 'andrew'
+    ; warning
+    @(34.29 mm, 80.01 mm): Symbol #PWR99 [VBAT]
+[lib_symbol_mismatch]: Symbol 'SS34_C8678' doesn't match copy in library 'easyeda2kicad'
+    ; warning
+    @(72.39 mm, 80.01 mm): Symbol D15 [SS34_C8678]
+[lib_symbol_mismatch]: Symbol 'MT3608' doesn't match copy in library 'easyeda2kicad'
+    ; warning
+    @(52.07 mm, 96.52 mm): Symbol U13 [MT3608]
+[lib_symbol_mismatch]: Symbol 'VBAT' doesn't match copy in library 'andrew'
+    ; warning
+    @(181.61 mm, 83.82 mm): Symbol #PWR40 [VBAT]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(209.55 mm, 35.56 mm): Label 'TX_9151'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(209.55 mm, 38.10 mm): Label 'RX_9151'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(260.35 mm, 43.18 mm): Label 'SEN_IRQ'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(256.54 mm, 83.82 mm): Label 'Solenoid'
+[lib_symbol_mismatch]: Symbol 'SS34_C8678' doesn't match copy in library 'easyeda2kicad'
+    ; warning
+    @(280.67 mm, 74.93 mm): Symbol D13 [SS34_C8678]
+[lib_symbol_mismatch]: Symbol 'VBAT' doesn't match copy in library 'andrew'
+    ; warning
+    @(500.38 mm, 195.58 mm): Symbol #PWR59 [VBAT]
+[lib_symbol_mismatch]: Symbol 'VBAT' doesn't match copy in library 'andrew'
+    ; warning
+    @(500.38 mm, 198.12 mm): Symbol #PWR41 [VBAT]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(541.02 mm, 185.42 mm): Label 'RESET_NPM1300'
+
+ ** ERC messages: 14  Errors 0  Warnings 14
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
