@@ -1,8 +1,7 @@
 Parts Type,JLCPCB Part #,MFR Part #,Description,Unit Price,Qty,Total Price
 Basic,C307331,CL05B104KB54PNC,100nF 50V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0076,13,0.0988
 Basic,C52923,CL05A105KA5NQNC,1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0142,5,0.0710
-Basic,C15850,CL21A106KAYNNNE,10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0643,5,0.3215
-Basic,C15850,CL21A106KAYNNNE,10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0643,2,0.1286
+Basic,C15850,CL21A106KAYNNNE,10uF 25V X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0643,7,0.4501
 Extended,C52306,CL32A226KAJNNNE,22uF 25V X5R ±10% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.1814,2,0.3628
 Extended,C778333,C0402C0G0R6B500NTB,0.6pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0029,1,0.0029
 Extended,C3875120,C0402C0G500-0R8BNP,0.8pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS,0.0105,1,0.0105
@@ -24,7 +23,7 @@ Extended,C3018484,BSS84,-55℃~+150℃ 1 P-Channel 10pF 10Ω@5V 130mA 225mW 2V 3
 Basic,C8545,2N7002,1 N-channel 115mA 2.5V 225mW 50pF 5pF 5Ω@10V 60V SOT-23 MOSFETs ROHS,0.0154,3,0.0462
 Basic,C25792,0402WGF4702TCE,-55℃~+155℃ 47kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,1,0.0012
 Extended,C22369540,RCA02150KFLF,-55℃~+155℃ 150kΩ 50V 62.5mW Thick Film Resistor ±1% ±200ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0004,1,0.0004
-Basic,C25744,0402WGF1002TCE,-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,8956,10.7472
+Extended,C49330233,AS0210KF,-55℃~+155℃ 10kΩ 50V 62.5mW ±1% ±200ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0016,4,0.0064
 Basic,C25104,0402WGF3300TCE,-55℃~+155℃ 330Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,3,0.0036
 Extended,C25169,0402WGJ047JTCE,-55℃~+155℃ 4.7Ω 50V 62.5mW Thick Film Resistor ±200ppm/℃ ±5% 0402 Chip Resistor - Surface Mount ROHS,0.0016,8,0.0128
 Basic,C25905,0402WGF5101TCE,-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0009,1,0.0009
@@ -32,7 +31,7 @@ Extended,C100318,CR0402FF22R0G,-55℃~+125℃ 22Ω 50V 62.5mW Thick Film Resisto
 Basic,C25076,0402WGF1000TCE,-55℃~+155℃ 100Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0012,3,0.0036
 Extended,C159084,RTT021913FTH,-55℃~+155℃ 191kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0007,1,0.0007
 Extended,C64043,0402WGF2403TCE,-55℃~+155℃ 240kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.001,1,0.001
-Basic,C25741,0402WGF1003TCE,-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0011,10000,11.0000
+Extended,C144809,AC0402FR-07100KL,-55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0018,1,0.0018
 Basic,C25900,0402WGF4701TCE,-55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS,0.0011,2,0.0022
 Extended,C719176,TC33X-2-103E,"1 10kΩ 150mW ±25% ±250ppm/℃ SMD-3P,3.8x3.6mm Potentiometers, Variable Resistors ROHS",0.1065,1,0.1065
 Extended,C139797,SKRPACE010,"-30℃~+85℃ 16V 2.5mm 2.6N 3.2mm 4.2mm 50,000 cycles 50mA J-Lead Oval button SPST-NO Surface Mount,Vertical SMD-4P,4.2x3.2mm Tactile Switches ROHS",0.0629,1,0.0629

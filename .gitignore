@@ -1,3 +1,8 @@
 ~smart_pouch.kicad_pro.lck
 ~smart_pouch.kicad_sch.lck
-smart_pouch-backups/smart_pouch-2026-06-16_203426.zip
+*.lck
+*.aux
+*.log
+*.out
+*.synctex.gz
+__pycache__/

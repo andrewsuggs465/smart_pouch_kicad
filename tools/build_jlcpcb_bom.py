@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 
-RAW_BOM = Path("smart_pouch_kicad_bom_raw.csv")
+RAW_BOM = Path("bom/smart_pouch_kicad_bom_raw.csv")
 
 
 @dataclass(frozen=True)
@@ -38,7 +38,7 @@ OVERRIDES: dict[str, Override] = {
         note="100 nF 0402 X7R 50 V; chosen over 16 V parts for rail-margin safety.",
     ),
     "C2,C3,C5,C11,C24": Override("C52923", note="1 uF 0402 X5R 25 V."),
-    "C7,C20-C23": Override("C15850", note="10 uF 0805 X5R 25 V."),
+    "C7,C16,C18,C20-C23": Override("C15850", note="10 uF 0805 X5R 25 V."),
     "C16,C18": Override("C15850", note="10 uF 0805 X5R 25 V."),
     "C17,C19": Override("C52306", note="22 uF 1210 X5R 25 V."),
     "C25": Override(
@@ -83,7 +83,7 @@ OVERRIDES: dict[str, Override] = {
     "Q3,Q5,Q6": Override("C8545", note="2N7002 N-channel MOSFET."),
     "R1": Override("C25792", note="47 kOhm 0402 1%."),
     "R2": Override("C22369540", note="150 kOhm 0402 1%."),
-    "R3,R4,R20,R22": Override("C25744", note="10 kOhm 0402 1%; Basic assembly part."),
+    "R3,R4,R20,R22": Override("C49330233", note="10 kOhm 0402 1%; min-1 alternative to Basic C25744."),
     "R5,R6,R28": Override(
         "C25104",
         footprint="Resistor_SMD:R_0402_1005Metric",
@@ -95,7 +95,7 @@ OVERRIDES: dict[str, Override] = {
     "R18,R23,R24": Override("C25076", note="100 Ohm 0402 1%."),
     "R19": Override("C159084", note="191 kOhm 0402 1%."),
     "R21": Override("C64043", note="240 kOhm 0402 1%."),
-    "R25": Override("C25741", note="100 kOhm 0402 1%; Basic assembly part."),
+    "R25": Override("C144809", note="100 kOhm 0402 1%; min-1 alternative to Basic C25741."),
     "R26,R27": Override("C25900", note="4.7 kOhm 0402 1%."),
     "RV1": Override(
         "C719176",
@@ -135,7 +135,7 @@ PART_WARNINGS: dict[str, str] = {}
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--raw", type=Path, default=RAW_BOM)
-    parser.add_argument("--out-prefix", default="smart_pouch")
+    parser.add_argument("--out-prefix", default="bom/smart_pouch")
     parser.add_argument("--no-network", action="store_true", help="Do not refresh JLCPCB data.")
     return parser.parse_args()
 
@@ -281,6 +281,7 @@ def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]]) 
 
 
 def write_csv(path: Path, rows: list[dict[str, Any]], headers: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=headers, extrasaction="ignore")
         writer.writeheader()
@@ -335,6 +336,26 @@ def main() -> None:
         ["Comment", "Designator", "Footprint", "LCSC Part #"],
     )
 
+    # Some JLCPCB importer flows try to match on manufacturer part numbers if
+    # description/MPN-like columns are present. This stripped upload BOM keeps
+    # the JLC part number unambiguous.
+    strict_upload_rows = [
+        {
+            "Designator": row["Designators"],
+            "Quantity": row["Qty Needed"],
+            "Comment": row["Value"],
+            "Footprint": row["KiCad Footprint"],
+            "JLCPCB Part #": row["LCSC Part #"],
+        }
+        for row in rows
+        if row["LCSC Part #"]
+    ]
+    write_csv(
+        Path(f"{args.out_prefix}_jlcpcb_upload_bom.csv"),
+        strict_upload_rows,
+        ["Designator", "Quantity", "Comment", "Footprint", "JLCPCB Part #"],
+    )
+
     cart_rows = [
         {
             "Parts Type": row["Library Type"],
@@ -359,6 +380,7 @@ def main() -> None:
 
     print(f"Wrote {args.out_prefix}_jlcpcb_bom_review.csv ({len(rows)} lines)")
     print(f"Wrote {args.out_prefix}_jlcpcb_assembly_bom.csv ({len(assembly_rows)} lines)")
+    print(f"Wrote {args.out_prefix}_jlcpcb_upload_bom.csv ({len(strict_upload_rows)} lines)")
     print(f"Wrote {args.out_prefix}_jlcpcb_cart.csv ({len(cart_rows)} lines)")
     print(f"Wrote {args.out_prefix}_jlcpcb_unresolved.csv ({len(unresolved_rows)} lines)")
 
