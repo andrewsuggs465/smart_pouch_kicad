@@ -7681,7 +7681,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:NRF9151-LACA-R7"
+		(symbol "easyeda2kicad:NRF9151-SICA"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7697,7 +7697,7 @@
 					)
 				)
 			)
-			(property "Value" "NRF9151-LACA-R7"
+			(property "Value" "NRF9151-SICA"
 				(at 0 -76.2 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7707,7 +7707,7 @@
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-LACA-R7"
+			(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-SICA"
 				(at 0 -78.74 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7751,7 +7751,7 @@
 					)
 				)
 			)
-			(property "MPN" "nRF9151-LACA-R7"
+			(property "MPN" "nRF9151-SICA"
 				(at 0 -86.36 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7773,7 +7773,7 @@
 					)
 				)
 			)
-			(symbol "NRF9151-LACA-R7_0_1"
+			(symbol "NRF9151-SICA_0_1"
 				(rectangle
 					(start -16.51 73.66)
 					(end 13.97 -73.66)
@@ -16794,16 +16794,6 @@
 		)
 		(uuid "322bbf5c-df77-423a-8664-394a839b63ac")
 	)
-	(label "SEN_VIN"
-		(at 678.18 284.48 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "322cfbec-fef8-41e4-9817-e04381234dc8")
-	)
 	(label "SWO_9151"
 		(at 471.17 63.5 0)
 		(effects
@@ -16823,6 +16813,84 @@
 			(justify left bottom)
 		)
 		(uuid "37fffc42-1821-4677-b973-4a18187814bd")
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 509.27 41.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "sen-vin-3v3-pwr-symbol")
+		(property "Reference" "#PWR_SEN_VIN"
+			(at 513.08 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 509.27 38.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 509.27 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 509.27 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 509.27 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "sen-vin-3v3-pin1")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR_SEN_VIN")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(label "SEN_VIN"
 		(at 509.27 41.91 180)
@@ -20460,7 +20528,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:NRF9151-LACA-R7")
+		(lib_id "easyeda2kicad:NRF9151-SICA")
 		(at 152.4 288.29 0)
 		(unit 1)
 		(body_style 1)
@@ -20481,7 +20549,7 @@
 				)
 			)
 		)
-		(property "Value" "NRF9151-LACA-R7"
+		(property "Value" "NRF9151-SICA"
 			(at 151.13 212.09 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20491,7 +20559,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-LACA-R7"
+		(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-SICA"
 			(at 152.4 367.03 0)
 			(hide yes)
 			(show_name no)
@@ -20535,7 +20603,7 @@
 				)
 			)
 		)
-		(property "MPN" "nRF9151-LACA-R7"
+		(property "MPN" "nRF9151-SICA"
 			(at 152.4 374.65 0)
 			(hide yes)
 			(show_name no)
