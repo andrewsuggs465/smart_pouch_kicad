@@ -450,7 +450,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -632,7 +632,7 @@
         "uuid": "cf7f741c-1242-4624-8251-3a3fa2844fb7"
       }
     ],
-    "used_designators": "",
+    "used_designators": "R5-6,R28,LED2",
     "variants": []
   },
   "sheets": [

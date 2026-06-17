@@ -1,0 +1,716 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyvrb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{url}
+\urlstyle{tt}
+\Urlmuskip=0mu plus 1mu
+\emergencystretch=1.5em
+
+\setlist{nosep}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.4em}
+
+\newcommand{\partno}[1]{\texttt{#1}}
+\newcommand{\done}{$\boxtimes$}
+\newcommand{\todo}{$\square$}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries SecurePouch --- Technical Product Specification}\\[0.6em]
+{\large Smart Anti-Theft Travel Pouch}\\[1.2em]
+\begin{tabular}{ll}
+\textbf{Status} & Working tracker demo (June 2026) --- Nano 33 BLE prototype\\
+& paired to the Android app, relaying locations to the live\\
+& dashboard end-to-end. Gen-1 FDM demonstrator enclosure ready.\\
+\textbf{Last updated} & June 2026\\
+\textbf{Document purpose} & Consolidated reference specification for hardware, software,\\
+& and physical design decisions made to date\\
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+\section{Product Overview}
+
+A smart anti-theft travel security pouch combining slash-resistant textile construction with integrated LTE-M/GNSS tracking, BLE proximity detection, biometric (fingerprint) access control, and an active audio--visual alarm system. Target users: safety-conscious travellers, international tourists, urban commuters, and concerned parents.
+
+\textbf{Business model:} one-time device purchase plus cellular data subscription (Hologram eUICC).
+
+\textbf{Development roadmap:} demo hardening $\rightarrow$ anti-theft features $\rightarrow$ nRF9151 DK prototype $\rightarrow$ peripheral drivers $\rightarrow$ PCB (see \S15).
+
+\subsection{Confirmed Scope}
+
+\begin{itemize}
+  \item \textbf{Lock:} electromechanical --- spring-loaded solenoid pin latch (fail-locked), with recessed mechanical key override.
+  \item \textbf{Connectivity:} LTE-M (NB-IoT fallback), GNSS, and BLE~5.3. No Wi-Fi radio on-device.
+  \item \textbf{Alarm:} piezoelectric diaphragm driven at resonance into a Helmholtz resonance chamber, plus an array of high-brightness ($\sim$1\,W) strobe LEDs.
+  \item \textbf{Enclosure:} rigid housing for electronics and latch, with a passport-sized fabric body. Final form factor is not decided; material expected to be machined aluminium. Gen-1 demonstrator is FDM-printed and ready.
+\end{itemize}
+
+\subsection{Descoped Items}
+
+\begin{itemize}
+  \item RFID-blocking construction
+  \item Waterproofing (IPX4 target removed)
+  \item RF regulatory compliance work (FCC/CE) --- deferred until commercialisation
+  \item nRF54 / BLE Channel Sounding --- rejected; useless without phone-side support. RSSI zones are the ranging ceiling; UWB would be the precision-finding route if ever needed
+  \item Embedded push service in the Android app --- proximity alerts are local notifications; pouch commands piggyback on the scan service's 30\,s cycle (UnifiedPush/Sunup remains for FMD phone commands only)
+\end{itemize}
+
+\section{Design Requirements}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Requirement} & \textbf{Notes}\\
+\midrule
+Portable \& lightweight & Target total weight $<$150\,g including electronics\\
+Slash / stab resistant & Primary physical security requirement (para-aramid layer)\\
+Easy to use & Single-tap arm/disarm; biometric or remote unlock\\
+Global connectivity & LTE-M/NB-IoT on Hologram's 550+ carrier network, 190+ countries\\
+End-to-end encryption & All device--server and server--client communication\\
+Accessible without phone & Web dashboard functional from any browser\\
+Fail-safe locking & Mechanical key override if electronics fail; fail-locked on power loss\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Acknowledged trade-offs:} security vs.\ portability; subscription cost vs.\ cellular capability; RF regulatory compliance required before any commercial release.
+
+\section{Physical Design}
+
+\subsection{Material Stack}
+
+Three layers of protection, outside to inside:
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+[500D Cordura PU nylon]     <- abrasion resistance, weather, aesthetics
+[Aramid PARATEX 400P]       <- slash and stab resistance (structural core)
+[Robic Diamond Ripstop]     <- interior finish, lightweight backing
+\end{Verbatim}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{llLl}
+\toprule
+\textbf{Item} & \textbf{Part no.} & \textbf{Description} & \textbf{Supplier}\\
+\midrule
+Outer shell & \partno{40201.ANTHR} & 500D Cordura, PU-coated nylon, 240\,g/m\textsuperscript{2}, anthracite, 1.5\,m width & Extremtextil\\
+Cut/stab layer & \partno{21-131} & Aramid PARATEX 400P woven para-aramid, 150\,cm width & TEXfire\\
+Inner lining & \partno{73078.SW} & Diamond Ripstop nylon, Robic Ocean Recycling, 70\,den, UTS-coated, 100\,g/m\textsuperscript{2}, 1.49\,m width & Extremtextil\\
+Sewing thread & \partno{71980.ROHGLB} & Kevlar/aramid thread, size 75, 100\,m & Extremtextil\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Layer rationale:}
+
+\begin{itemize}
+  \item \emph{500D Cordura (outer):} more flexible than 1000D nylon; protects against scuffs, rain, and dirt; good sewability; shields the aramid layer from exposure.
+  \item \emph{PARATEX 400P (middle):} woven para-aramid (comparable to 400\,gsm Kevlar). Woven construction is more flexible and more cut-resistant than aramid felt; resistant to knife attack; acts as the structural core. Replaces the earlier UHMWPE (Dyneema) selection --- equivalent or better stab resistance, good slash resistance, readily available cut-to-size.
+  \item \emph{Robic 70\,den ripstop (inner):} protects contents, gives a smooth interior, and reduces friction between the aramid layer and stowed items.
+\end{itemize}
+
+\textbf{Tooling:} Kretzer Finny TecX1 micro-serrated scissors, 8\,cm (Extremtextil \partno{70954}) --- required for clean cuts through aramid fabric.
+
+\subsection{Dimensions (Compact Variant)}
+
+\begin{itemize}
+  \item Length: $\sim$155\,mm (passport standard + margin)
+  \item Width: $\sim$98\,mm
+  \item Depth: TBD --- pending final lock/enclosure assembly design
+  \item Wearing options: neck/shoulder lanyard, cross-body strap, or jacket pocket
+\end{itemize}
+
+\subsection{Enclosure}
+
+The electronics, latch, acoustic cavity, and fingerprint sensor are housed in a rigid enclosure integrated with the fabric body. The final form factor is \textbf{not decided}.
+
+\begin{itemize}
+  \item \textbf{Gen-1 demonstrator:} FDM-printed --- complete and ready.
+  \item \textbf{Final material:} expected to be machined aluminium (CNC for the 5-unit prototype run), pending form-factor decision.
+  \item \textbf{Constraints on the final design:}
+  \begin{itemize}
+    \item Rigid faces at the latch interface to guarantee solenoid pin alignment.
+    \item BLE PCB trace antenna must face outward with no metal obstruction --- a full-aluminium enclosure needs an antenna window or external antenna.
+    \item Helmholtz cavity with external aperture for the piezo diaphragm (\S7.1).
+    \item Fingerprint sensor flush-mounted on an outer face.
+    \item Recessed key slot for the mechanical override.
+    \item PCB module serviceable without fabric disassembly.
+  \end{itemize}
+  \item \textbf{Open concern --- discretion:} whether the rigid enclosure reads as discreet travel gear or conspicuous hardware; evaluate against the FDM mock-up before locking dimensions.
+\end{itemize}
+
+\subsection{Closure \& Lock --- Solenoid Pin Latch}
+
+The original zipper-based closure has been abandoned in favour of a rigid latch closed by a spring-loaded solenoid pin.
+
+\textbf{Latch mechanism (confirmed):}
+\begin{itemize}
+  \item Spring-loaded steel pin extends into a machined receiver hole in the mating latch face.
+  \item Spring holds the pin extended: \textbf{fail-locked by default}. The solenoid retracts the pin briefly ($\sim$0.5\,s) on an unlock event only.
+  \item Drive: single GPIO + 2N7002 MOSFET; brief current pulse, no holding current in either state.
+  \item Solenoid supply: 12\,V boost rail (MT3608); controlled via 2N7002 transistor.
+  \item Rigid latch faces guarantee pin alignment, eliminating the principal weakness of solenoid pins in flexible assemblies.
+\end{itemize}
+
+\textbf{Rationale over servo cam (abandoned):} the camming action of a servo lock exists to tolerate misalignment, which rigid latch faces make unnecessary. The solenoid pin is simpler (one moving part), smaller, lighter, inherently fail-locked, and needs only a GPIO pulse rather than PWM.
+
+\textbf{Mechanical fallback --- recessed key slot:} a keyhole manually drives a push rod that retracts the pin. Operates with zero power. The slot is recessed into the enclosure body and inaccessible without the correct key.
+
+\section{Electronic Architecture}
+
+\subsection{System Block Diagram}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+[LiPo Battery]
+      |
+  [nPM1300 PMIC]
+  +---+--------------------------------+
+  |  BUCK1 (1.8V) --> nRF52840         |
+  |  BUCK2 (3.3V) --> strobe LEDs      |
+  |  Battery rail --> nRF9151          |
+  |  Battery rail --> MT3608 boost     |
+  |  USB-C PD input                    |
+  +------------------------------------+
+         |
+     [MT3608]
+     15V boost
+         |
+    [H-Bridge]  <-- 2x GPIO (nRF52840), antiphase @ 2.9 kHz
+         |
+   [CEB-35FD29 piezo diaphragm -> Helmholtz cavity]
+
+[nRF9151] <--UART--> [nRF52840]
+    |                     |
+  LTE-M               BLE 5.3
+  NB-IoT              Accelerometer (I2C)
+  GNSS                Fingerprint (UART)
+  App logic           Solenoid pin lock (GPIO + 2N7002, 12V boost)
+                      H-bridge siren (2x GPIO @ 2.9 kHz)
+                      Feedback wire (ADC, resonance lock)
+                      Strobe LED array (GPIO/PWM + MOSFET)
+                      Status LEDs
+\end{Verbatim}
+
+\subsection{Core ICs}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{llL}
+\toprule
+\textbf{Component} & \textbf{Part} & \textbf{Function}\\
+\midrule
+App MCU + LTE-M/GNSS & Nordic nRF9151-SICA & Cortex-M33 @ 64\,MHz; LTE-M/NB-IoT modem; integrated GNSS; PSM sleep $\sim$2.5\,\textmu A\\
+BLE SoC + peripheral MCU & Nordic nRF52840 & Cortex-M4F @ 64\,MHz; BLE~5.3; 256\,KB RAM; 1\,MB flash; drives all local peripherals. Currently prototyped on an Arduino Nano 33 BLE\\
+PMIC & Nordic nPM1300-CAAA-R & USB-C PD charging (up to 1.5\,A); fuel gauge; BUCK1 (1.8\,V $\rightarrow$ nRF52840); battery rail (3.7\,V $\rightarrow$ nRF9151)\\
+Accelerometer & Bosch BMA400 & Triaxial; I\textsuperscript{2}C; $<$1\,\textmu A wake mode; hardware motion-wakeup interrupt; 2$\times$2\,mm\\
+Boost converter (siren) & MT3608 (\partno{C84446}) & Battery $\rightarrow$ 15\,V rail for H-bridge (30\,V\,p-p across piezo)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Inter-MCU communication:} bidirectional UART. The nRF9151 is the primary application processor and LTE-M/GNSS hub; the nRF52840 handles BLE proximity, local sensor polling, and all actuator control. The UART message protocol (status, commands, GNSS handoff) is not yet defined (roadmap P3).
+
+\section{Connectivity}
+
+\subsection{Cellular}
+\begin{itemize}
+  \item Technology: LTE-M primary, NB-IoT fallback; modem integrated in nRF9151.
+  \item SIM: Hologram Hyper eUICC, nano (4FF); 190+ countries, 550+ carrier networks; OTA profile management.
+  \item Power saving: PSM + eDRX; target minutes-long modem sleep between location pings.
+\end{itemize}
+
+\subsection{GNSS}
+\begin{itemize}
+  \item Receiver integrated in nRF9151; constellations: GPS, GLONASS, Galileo, BeiDou.
+  \item A-GNSS via nRF~Cloud for $<$5\,s cold start.
+  \item Fallback: cell-ID and Wi-Fi positioning via nRF~Cloud Location Services (network-side; no Wi-Fi radio on-device).
+\end{itemize}
+
+\subsection{BLE}
+\begin{itemize}
+  \item Radio: nRF52840, BLE~5.3 (BLE-only; no Classic).
+  \item Primary uses: tracker relay advertising (\S12.2) and dead-man switch --- alarm triggers when the link to the user's phone is lost beyond a configurable proximity threshold.
+  \item Antenna: PCB trace inverted-F; no discrete component; requires copper keep-out zone.
+\end{itemize}
+
+\textbf{Ranging realism:} single-phone RSSI gives distance zones (near/medium/far/gone), not coordinates. The dashboard draws the pouch as a radius ring around the phone; the dead-man alarm uses an RSSI threshold plus disconnect detection with a $\sim$30\,s grace delay.
+
+\subsection{Antennas}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{llL}
+\toprule
+\textbf{Antenna} & \textbf{Part} & \textbf{Notes}\\
+\midrule
+Cellular + GNSS (2-in-1) & Taoglas FXP301 & 600\,MHz--8\,GHz cellular + GNSS L1; 105$\times$20$\times$0.24\,mm flex PCB; peel-and-stick; dual IPEX/U.FL\\
+BLE & PCB trace (inverted-F) & 2.4\,GHz; keep-out zone required in PCB layout\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Locking System}
+
+\subsection{Primary Lock --- Solenoid Pin (Electromechanical)}
+
+As described in \S3.4: spring-loaded pin, fail-locked by default, retracted by a brief solenoid pulse (GPIO + 2N7002 MOSFET, $\sim$0.5\,s). No continuous current draw in either state. Firmware adds a lockout after repeated failed unlock attempts (roadmap P4).
+
+\subsection{Backup --- Mechanical Key Override}
+
+Recessed key slot drives a push rod retracting the pin with zero power. Required for all electronics-failure scenarios, regulatory safety, and consumer confidence.
+
+\subsection{Unlock Methods (priority order)}
+
+\begin{enumerate}
+  \item Fingerprint sensor (biometric)
+  \item Remote unlock via LTE-M (web dashboard)
+  \item BLE unlock command from paired phone
+  \item Physical key (mechanical override)
+\end{enumerate}
+
+\subsection{Auto-Lock / Dead-Man Switch}
+
+\begin{itemize}
+  \item Armed mode: the app holds a persistent GATT connection for seconds-fast disconnect detection (duty-cycled scanning remains for disarmed mode).
+  \item Trigger: BLE supervision timeout or RSSI below a calibrated threshold (with hysteresis, as a softer trigger than hard disconnect).
+  \item Configurable delay before alarm (default 30\,s, with reconnect grace) to reduce false positives.
+  \item Alarm fires simultaneously with lock engagement.
+\end{itemize}
+
+\section{Alarm System}
+
+\subsection{Audio --- Piezoelectric Diaphragm + Helmholtz Chamber}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Parameter} & \textbf{Value}\\
+\midrule
+Part & Same Sky CEB-35FD29\\
+Type & Piezoelectric disc element with feedback electrode\\
+Diameter / thickness / weight & 35\,mm / 0.63\,mm / 3.5\,g\\
+Resonant frequency & 2.9\,kHz (range 2.4--3.4\,kHz)\\
+Max drive voltage & 30\,V peak-to-peak\\
+Impedance & 500\,$\Omega$\\
+Termination & Wire leads: red (drive +), black (drive $-$/GND), blue (feedback)\\
+Mounting & Bonded with epoxy at the rim into the enclosure acoustic cavity; not PCB-mounted; leads route through an internal channel to the PCB\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Helmholtz cavity (enclosure wall):}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
++-----------------------------+
+|  6 mm aperture hole --> ))) sound out
+|  +-------------------+      |
+|  |  ~8 mm deep dome  |      |   <- Helmholtz cavity (~5-8 cm^3)
+|  |  cavity           |      |
+|  +-------------------+      |
+|  CEB-35FD29 disc bonded     |   <- epoxy at disc rim (35 mm dia.)
+|  Wire leads -> channel      |   <- routed to PCB
++-----------------------------+
+\end{Verbatim}
+
+\begin{itemize}
+  \item Cavity depth $\sim$8\,mm; aperture $\sim$6\,mm diameter; tuned nominally to 2.9\,kHz; adds $\sim$10\,mm to local enclosure depth.
+  \item A bare piezo disc in free air produces modest SPL; the tuned cavity substantially raises effective output. SPL to be validated on the physical prototype.
+\end{itemize}
+
+\subsection{Siren Drive --- Boost + Full H-Bridge}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+Battery (3.7V) -> MT3608 boost -> 15V rail
+                                     |
+                               [Full H-Bridge]
+                               High-side: 2x BSS84 (P-ch, SOT-23, 30V)
+                               Low-side:  2x 2N7002 (N-ch, SOT-23)
+                                     |
+                               CEB-35FD29 diaphragm
+                               +15V --> RED wire
+                               -15V --> BLACK wire (inverted half-cycle)
+                               = 30V p-p across element
+\end{Verbatim}
+
+\begin{itemize}
+  \item Drive: nRF52840 generates a 2.9\,kHz square wave on two GPIOs in antiphase (complementary PWM pair).
+  \item Feedback (blue wire): to nRF52840 ADC via voltage divider; firmware sweeps frequency to lock onto the resonance peak for maximum SPL.
+  \item Gate resistors: 100\,$\Omega$ per MOSFET gate. BSS84 body diodes provide freewheeling protection.
+  \item Rationale: single-ended drive from 15\,V yields 15\,V\,p-p; a full bridge yields $\pm$15\,V $=$ 30\,V\,p-p --- exactly the rated maximum, roughly doubling acoustic output from the same supply.
+\end{itemize}
+
+\subsection{Visual --- Strobe LED Array}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Parameter} & \textbf{Value}\\
+\midrule
+Emitter & XL-3030UWC-1W-3V (\partno{C2843891}), 1\,W SMD 3030, white strobe\\
+Configuration & Array of emitters (count and placement TBD)\\
+Supply & 3.3\,V rail (nPM1300 BUCK2)\\
+Drive & 2N7002 MOSFET; 8--10\,Hz PWM strobe\\
+Current limiting & 2.2\,$\Omega$ series resistor per emitter\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Emitter count, parallel vs.\ per-channel MOSFET drive, peak battery current during strobe, and thermal handling on the enclosure are open items that must close before the PCB order.
+
+\subsection{Alarm Trigger Conditions}
+
+\begin{itemize}
+  \item BLE dead-man switch (phone out of range / disconnect, configurable delay)
+  \item Accelerometer tamper pattern (rapid jerk / cutting vibration) via BMA400 hardware wake interrupt
+  \item Remote trigger via LTE-M from the web dashboard
+  \item Manual trigger via physical button (placement TBD)
+\end{itemize}
+
+Alarm response (state machine, roadmap P4): siren + strobe + lock engagement + location burst.
+
+\section{Biometric Access}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Parameter} & \textbf{Value}\\
+\midrule
+Part & DFRobot SEN0348 (Mouser \partno{426-SEN0348})\\
+Type & Capacitive\\
+Interface & UART $\rightarrow$ nRF52840\\
+Template storage & 80 fingerprints, on-module (no MCU RAM required)\\
+Resolution & 508\,dpi\\
+Supply & 3.3\,V; 60\,mA active\\
+Dimensions & 21\,$\times$\,5\,mm\\
+Operating temperature & $-40\,^{\circ}$C to $+60\,^{\circ}$C\\
+FAR & $<$0.001\,\%\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Capacitive sensing reads reliably on wet, dirty, or dry fingers --- the principal failure mode of optical sensors in travel use. The 5\,mm profile suits flush mounting on the enclosure outer face. 80 templates is ample for personal use (3--5 fingers across 1--2 users). The mechanical key remains the fallback for all biometric failure scenarios.
+
+\section{Power Architecture}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{llL}
+\toprule
+\textbf{Rail} & \textbf{Source} & \textbf{Consumers}\\
+\midrule
+3.7--4.2\,V (battery) & LiPo $\rightarrow$ nPM1300 pass-through & nRF9151 VDD; MT3608 inputs\\
+1.8\,V regulated & nPM1300 BUCK1 & nRF52840 VDD; BMA400; I\textsuperscript{2}C pull-ups\\
+3.3\,V regulated & nPM1300 BUCK2 & Strobe LED array\\
+12\,V boost & MT3608 & Solenoid pin lock (via 2N7002 transistor)\\
+15\,V boost & MT3608 (\partno{C84446}) & H-bridge siren supply only (30\,V\,p-p across diaphragm)\\
+USB-C input & nPM1300 charger & LiPo charging up to 1.5\,A (PD); powers system when plugged in\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Battery:} LiPo, 3.7\,V nominal, 800--1000\,mAh, flat pouch form with integrated PCM; JST-PH 2.0\,mm connector. Target: multi-day life at low LTE-M ping frequency using PSM/eDRX. The nPM1300 charger is optimised for cells up to 1000\,mAh; larger cells charge at reduced C-rate. Fuel-gauge readout feeds the BLE Battery Service and location posts (currently fixed at 100\,\% on the Nano 33 prototype until the nPM1300 exists).
+
+\section{PCB \& Passives}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Component} & \textbf{Spec}\\
+\midrule
+32\,MHz crystal & nRF52840 radio clock; $\pm$10\,ppm; load caps per nRF52840 datasheet\\
+32.768\,kHz crystal ($\times$2) & One per MCU; RTC and PSM timing; $\pm$20\,ppm\\
+BUCK inductors ($\times$2) & 1.5\,\textmu H, $\geq$300\,mA, low DCR, 0402/0603, for nPM1300 BUCK1/BUCK2\\
+NTC thermistor & 10\,k$\Omega$, B=3380\,K; battery temperature sensing for the nPM1300 charger\\
+USB ESD protection & PRTR5V0U2X, SOT-363\\
+MOSFETs, N-channel & 2N7002, SOT-23 --- H-bridge low-side, solenoid drive, strobe array drive (quantity per final array design)\\
+MOSFETs, P-channel & 2$\times$ BSS84, SOT-23, 30\,V --- H-bridge high-side only\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{I\textsuperscript{2}C bus:} 1.8\,V rail; 4.7\,k$\Omega$ pull-ups to BUCK1 output; shared by BMA400 and nPM1300.
+
+\section{Key Design Decisions (confirmed)}
+
+\begin{itemize}
+  \item \textbf{Zipper abandoned} --- replaced by a rigid solenoid pin latch.
+  \item \textbf{Servo cam abandoned} --- solenoid pin is simpler, lighter, fail-locked, no PWM needed.
+  \item \textbf{UHMWPE (Dyneema) abandoned} --- replaced by Aramid PARATEX 400P (para-aramid, easier to source).
+  \item \textbf{Siren drive:} full H-bridge + MT3608 boost gives 30\,V\,p-p (vs.\ 15\,V\,p-p single-ended) --- doubles acoustic output.
+  \item \textbf{Fingerprint:} SEN0348 capacitive over optical --- reliable on wet/dirty fingers in travel use.
+  \item \textbf{Backend:} FMD Server fork --- working map dashboard + command dispatch infrastructure.
+  \item \textbf{Relay architecture:} AirTag-style (phone GPS attributed to pouch) for the BLE prototype; standalone GNSS arrives with the nRF9151.
+  \item \textbf{nRF54 rejected} --- BLE Channel Sounding is useless without phone-side support; RSSI zones are the ranging ceiling. UWB would be the precision-finding route if ever needed.
+  \item \textbf{No embedded push service} --- proximity alerts are local notifications; pouch commands piggyback on the 30\,s scan cycle.
+\end{itemize}
+
+\section{Software \& Backend}
+
+\subsection{Repository Structure}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+smart_pouch/
++-- README.md          <- full technical product spec
++-- firmware/          <- device firmware (own git repo)
+|   +-- nrf52840/      <- PlatformIO/Arduino, Nano 33 BLE prototype (working)
+|   +-- nrf9151/       <- Zephyr/NCS skeleton (LTE-M/GNSS, not started)
+|   +-- shared/        <- ble_protocol.h - BLE UUIDs shared with Android app
++-- fmd-android/       <- fork of FMD Android (Kotlin); companion app + BLE->server relay
++-- fmd-server/        <- fork of FMD Server (Go + React); backend + web dashboard
++-- infra/             <- Ansible playbooks for Oracle Cloud deployment
+\end{Verbatim}
+
+\texttt{fmd-android} and \texttt{fmd-server} are forks of \texttt{gitlab.com/fmd-foss/} projects. Upstream tracks lost Android phones; this fork adapts the stack for an IoT embedded device. All subprojects are AGPL-3.0 / GPLv3-or-later; the fork must remain open source.
+
+\subsection{Tracker Architecture (implemented --- AirTag-style relay)}
+
+The Nano 33 BLE prototype has no GPS; location comes from the phone:
+
+\begin{enumerate}
+  \item Firmware advertises BLE service \path{af19b3e4-d279-4a2a-9d3f-2f5e8a6bc051} under the name \texttt{SecurePouch} (same for all units). The unique unit ID (e.g.\ \texttt{securepouch-001}) is read from GATT characteristic \partno{...bc052}; a status byte (LOCKED/ARMED flags, reserved) is \partno{...bc053}. Source of truth: \path{firmware/shared/ble_protocol.h}.
+  \item \texttt{BleTrackerScanService} (Android foreground service) scans 5\,s on / 25\,s off. On sighting, it takes the \emph{phone's own GPS fix}, encrypts it with the pouch account's RSA public key, and POSTs it to the FMD server under the pouch's credentials (\path{BleTrackerRepository}; \path{EncryptedSharedPreferences} file \path{sp_ble_tracker}).
+  \item \textbf{Each pouch is its own FMD server account} --- username $=$ the BLE device UID. The web dashboard adds it as a tracker tab (device ID + that account's password).
+\end{enumerate}
+
+\textbf{Pairing flow (Meshtastic-style):} SecurePouch Devices $\rightarrow$ Scan for Devices (\texttt{BleScanActivity}) $\rightarrow$ tap found device $\rightarrow$ GATT read of device ID $\rightarrow$ dialog asks password + registration token $\rightarrow$ register. If the username already exists on the server (HTTP 400), the app automatically falls back to logging in with the given password. Registration/login takes 30--60\,s of on-device crypto (RSA keygen + Argon2) --- silence is normal.
+
+\begin{itemize}
+  \item The server's registration token gates account creation; it lives in the Ansible vault (\path{vault_lintu_registration_token} in \path{infra/host_vars/lintu-server.myvnc.com/vault.yml}).
+  \item \texttt{securepouch-001} is registered as the dev test unit.
+  \item Access tokens expire after \textbf{7 days}; refresh logic is not yet implemented on either client (top P1 item).
+\end{itemize}
+
+\subsection{fmd-server (Go + React)}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+Language & Go 1.24\\
+Database & SQLite via GORM (embedded; no separate DB process)\\
+Frontend & React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui, Leaflet maps, Zustand\\
+Package manager & pnpm ($\geq$10)\\
+Key libraries & zerolog, spf13/cobra+viper, Prometheus metrics\\
+Distribution & Single Go binary embedding the compiled React frontend\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{API structure} (\texttt{backend/}): \texttt{api.go} (HTTP mux, security-headers middleware), \texttt{apiv1.go} (REST v1 handlers: location, command, picture, salt / requestAccess / pubKey endpoints), \texttt{backend.go} (server setup).
+
+\textbf{Dashboard fork changes (implemented):}
+\begin{itemize}
+  \item Multi-device map: phone + tracker tabs (\path{SidePanel}), per-device colours, eye visibility toggles.
+  \item Time filter (1h/6h/24h/7d/All) + fit-all control; history scrubber with pan/highlight (\path{LocationMap}).
+  \item Tracker credentials: session token in \path{localStorage['fmd-trackers']}; RSA keys in IndexedDB (\path{tracker:{deviceId}}). Tracker fetches use raw \texttt{fetch} so a tracker 401 never logs out the main account.
+  \item Dark-mode fixes in \path{ui/native-select.tsx} (\texttt{color-scheme: dark} + explicit option colours).
+\end{itemize}
+
+\textbf{Fork changes still pending:}
+\begin{itemize}
+  \item Command types \texttt{lock}, \texttt{unlock}, \texttt{arm}, \texttt{disarm}, \texttt{alarm} (do not exist upstream).
+  \item Dashboard lock/alarm controls; remove or stub Android-only features (camera capture, factory reset).
+\end{itemize}
+
+\subsection{fmd-android (Kotlin)}
+
+\begin{itemize}
+  \item Standard Android Gradle project; \texttt{dev} flavour installs in parallel with prod; keyword prefix \texttt{fmdev}.
+  \item SecurePouch additions live in \path{de.nulide.findmydevice.securepouch} (repository, discovered-device model) and \path{ui/settings/} (\path{PouchManagementActivity}, \path{BleScanActivity}, \path{BleScanViewModel}).
+  \item Push: UnifiedPush (user runs Sunup as distributor) for FMD phone commands only; no embedded push service.
+\end{itemize}
+
+\subsection{firmware/nrf52840 (PlatformIO, Arduino framework)}
+
+\begin{itemize}
+  \item Target \texttt{nano33ble}; library ArduinoBLE.
+  \item Advertises the SP service; OS-pairable (Just Works); GAP name + Generic Tag appearance; standard Battery Service (fixed 100\,\% until the nPM1300 exists); connect LED.
+  \item Per-unit \texttt{DEVICE\_UID} constant must be changed before flashing each unit.
+  \item nRF52840 is BLE-only (no Classic); Android system-settings pairing works but the app's GATT flow does not require it.
+\end{itemize}
+
+\subsection{infra (Ansible) / Deployment}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+nRF9151 / Android relay --HTTPS--> FMD Server (Go binary, port 8080)
+                                      |
+                                Caddy reverse proxy (auto-TLS, Let's Encrypt)
+                                      |
+                                Browser dashboard (HTTPS required by WebCrypto)
+\end{Verbatim}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+Provider / tier & Oracle Cloud Infrastructure, Always Free (ARM Ampere A1, Ubuntu 22.04)\\
+Live host & \texttt{lintu-server.myvnc.com}; hosts named NATO-phonetically from Foxtrot\\
+Stack & Docker Compose; Caddy (auto-TLS); FMD Server container\\
+Build policy & Builds happen on the laptop, never the server (cross-compile + upload zip)\\
+Secrets & Vault password at \texttt{\textasciitilde/.ansible/vault-pass}; SSH key outside repo; \texttt{vault.yml} files always ansible-vault encrypted --- never commit secrets unencrypted\\
+Backup hosting & Fly.io (Docker-native PaaS, auto-HTTPS on \texttt{.fly.dev})\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Build \& Deploy Commands}
+
+\begin{Verbatim}[frame=single,fontsize=\small]
+# Web dashboard + server (deploy pipeline)
+cd fmd-server/web && pnpm install && pnpm run build && cd ..
+GOOS=linux GOARCH=amd64 go build -o fmd-server-amd64 .
+GOOS=linux GOARCH=amd64 go build -o fmd-server-ctl-amd64 ./ctl/
+zip -j dist/fmd-server-securepouch-v0.1.0.zip fmd-server-amd64 fmd-server-ctl-amd64
+cd ../infra
+ansible-playbook 40-securepouch-server.yml \
+    --vault-password-file ~/.ansible/vault-pass
+# then hard-refresh the dashboard (Ctrl+Shift+R)
+
+# Local dev server (frontend must be built first)
+cd fmd-server && go run . serve
+
+# fmd-android
+cd fmd-android && ./gradlew assembleDevDebug
+adb install -r app/build/outputs/apk/dev/debug/app-dev-debug.apk
+# relay debugging:
+adb logcat -s BleTrackerRepository BleTrackerScanService Volley
+
+# firmware (Nano 33 BLE; pio is not on PATH)
+cd firmware/nrf52840
+~/.platformio/penv/bin/pio run -t upload
+~/.platformio/penv/bin/pio device monitor    # 115200 baud
+\end{Verbatim}
+
+\section{Manufacturing}
+
+\textbf{Prototype run:} 5 fully assembled PCBs from JLCPCB (fabrication + SMT assembly in one order). Consigned parts (nRF9151, nRF52840, nPM1300, Cree LEDs) shipped to the JLCPCB warehouse ahead of the assembly order.
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\textwidth}{lL}
+\toprule
+\textbf{Supplier} & \textbf{Role}\\
+\midrule
+JLCPCB & PCB fabrication + full SMT assembly; 5-unit prototype run\\
+Circuitos Impresos 2CI (Barcelona) & Quick-turn bare PCBs for rapid iteration (from 4\,h turnaround)\\
+Hologram & eUICC SIM provisioning and global data plan\\
+Mouser & Consigned parts and off-PCB modules\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Assembly notes:}
+\begin{itemize}
+  \item nRF9151 (LGA), nRF52840 (QFN73), nPM1300 (WLCSP/QFN): precision reflow required; not hand-solderable.
+  \item BLE trace antenna requires a copper keep-out zone --- verify in DFM before ordering.
+  \item FXP301 antenna attaches via adhesive + 2$\times$ U.FL connectors post-assembly.
+  \item SEN0348 connects via header; flush-mounted on the enclosure outer face.
+  \item CEB-35FD29 mounts in the enclosure Helmholtz cavity; wire leads route through an internal channel to the PCB.
+  \item Gen-1 demonstrator enclosure is FDM-printed; final enclosure expected to be CNC-machined aluminium, form factor TBD.
+\end{itemize}
+
+\section{Roadmap / TODO}
+
+Ordered by priority; each phase has a definition of done (DoD), and the next phase does not start until the previous DoD is met. Status as of 2026-06-11.
+
+\subsection{P0 --- Working tracker demo (complete; walk test pending)}
+
+\emph{DoD: walk around the block with the pouch in a bag and see the track on the dashboard.}
+
+\begin{itemize}
+  \item[\done] Flash updated firmware to Nano 33 BLE
+  \item[\done] Install rebuilt Android app
+  \item[\done] Deploy server (map features + dark-mode fix)
+  \item[\done] Pair pouch in app (auto-login fallback verified 2026-06-11)
+  \item[\done] Verify relay: logcat shows \texttt{Location posted for pouch 'securepouch-001'}
+  \item[\done] Dashboard: tracker tab added
+  \item[\todo] End-to-end walk test; check history scrubber + time filter against reality
+\end{itemize}
+
+\subsection{P1 --- Demo hardening}
+
+\begin{itemize}
+  \item[\todo] \textbf{Token refresh (Android):} pouch access tokens expire after 7 days. \path{BleTrackerRepository} stores \path{hashedPw}, so it can re-run \path{requestAccess} on a 401 and retry the post. Without this the relay dies silently after a week.
+  \item[\todo] \textbf{Token refresh (web):} tracker sessions also expire after 7 days; the dashboard should prompt to re-enter the tracker password instead of showing nothing.
+  \item[\todo] Phone-side ``pouch left behind'' notification --- app already tracks \texttt{lastSeen}; raise a local notification when a pouch is unseen for $N$ minutes.
+  \item[\todo] Real RSSI logging --- attach RSSI to each posted sighting (groundwork for the distance ring).
+  \item[\todo] Multi-unit sanity check: flash \texttt{securepouch-002} on a second board; confirm separate tabs/colours.
+\end{itemize}
+
+\subsection{P2 --- Anti-theft feature set}
+
+\begin{itemize}
+  \item[\todo] Armed/disarmed state end to end: app toggle $\rightarrow$ GATT write to STATUS characteristic (\texttt{SP\_STATUS\_ARMED} flag already reserved in \texttt{ble\_protocol.h})
+  \item[\todo] Persistent GATT connection while armed (app); duty-cycled scan stays for disarmed mode
+  \item[\todo] Pouch-side dead-man alarm (firmware): on supervision timeout while armed, wait configurable delay (default 30\,s with reconnect grace) $\rightarrow$ alarm. Built-in LED + serial as siren stand-in on the Nano 33.
+  \item[\todo] RSSI radius fence: calibrated threshold + hysteresis as a softer trigger than hard disconnect
+  \item[\todo] Distance ring on dashboard: pouch rendered as a translucent circle around the phone marker, radius from RSSI
+  \item[\todo] Server command types: \texttt{lock}, \texttt{unlock}, \texttt{arm}, \texttt{disarm}, \texttt{alarm}
+  \item[\todo] Dashboard arm/disarm/alarm controls per tracker tab
+  \item[\todo] App relays server commands to pouch over BLE, piggybacking on the 30\,s scan cycle
+\end{itemize}
+
+\subsection{P3 --- nRF9151 DK prototype (standalone, no phone)}
+
+Order the DK and activate the Hologram SIM early --- both have lead time.
+
+\begin{itemize}
+  \item[\todo] nRF Connect SDK / Zephyr toolchain (skeleton in \texttt{firmware/nrf9151/})
+  \item[\todo] Hologram SIM: pick data plan tier, activate, verify LTE-M attach on DK
+  \item[\todo] GNSS fix acquisition (+ A-GNSS via nRF Cloud)
+  \item[\todo] FMD API client in C: registration/login (Argon2 $\rightarrow$ \texttt{/salt}, \texttt{/requestAccess}); location encryption (RSA-OAEP + AES-256-GCM hybrid, mbedTLS) matching what the dashboard decrypts; HTTPS POST to \texttt{/location}; token refresh on 401
+  \item[\todo] Command polling loop (\texttt{/command}) $\rightarrow$ lock/unlock/arm/disarm/alarm
+  \item[\todo] UART protocol nRF9151 $\leftrightarrow$ nRF52840: message format (status, commands, GNSS handoff); document in \texttt{firmware/shared/}
+  \item[\todo] Port nRF52840 firmware from Arduino to Zephyr \emph{before} PCB bring-up, while the Nano 33 still works as fallback
+  \item[\todo] Power profile on DK: sleep currents, GNSS duty cycle, LTE-M PSM/eDRX tuning
+\end{itemize}
+
+\subsection{P4 --- Peripheral firmware (write before wiring)}
+
+Goal: when the PCBs arrive, bring-up is ``flash and probe,'' not ``write drivers while holding a multimeter.'' All developable on the Nano 33 / DK with breakout modules.
+
+\begin{itemize}
+  \item[\todo] BMA400 driver (I\textsuperscript{2}C) + motion-wakeup interrupt + tamper pattern detection
+  \item[\todo] SEN0348 driver (UART): enroll / verify / delete flows
+  \item[\todo] Solenoid lock driver: single-pulse GPIO via MOSFET, fail-locked logic, lockout after repeated failed attempts
+  \item[\todo] Siren driver: 2.9\,kHz complementary PWM pair for the H-bridge + resonance lock via feedback electrode (ADC)
+  \item[\todo] Strobe driver: 8--10\,Hz PWM on the Cree XP-E array
+  \item[\todo] nPM1300 config: charge profile, fuel gauge $\rightarrow$ real battery level in BLE Battery Service + location posts
+  \item[\todo] Alarm state machine: triggers (dead-man, tamper, remote, button) $\rightarrow$ siren + strobe + lock + location burst
+\end{itemize}
+
+\subsection{P5 --- Hardware / mechanical (parallel track)}
+
+\begin{itemize}
+  \item[\todo] Solenoid part selection + retraction-force validation at 12\,V
+  \item[\todo] Final enclosure form factor decision; CNC machining (5 prototype units)
+  \item[\todo] Strobe array definition: emitter count, placement, drive topology, peak current and thermal budget
+  \item[\todo] Acoustic cavity SPL validation on physical prototype
+  \item[\todo] Physical button placement (alarm trigger / manual override)
+  \item[\todo] PCB DFM check: BLE trace antenna keep-out before JLCPCB order
+  \item[\todo] JLCPCB order: 5 assembled PCBs; consigned parts shipped to warehouse ahead of assembly
+  \item[\todo] Extended size variant: dimensions and gusset design
+  \item[\todo] Hologram data plan tier selection (based on ping frequency)
+\end{itemize}
+
+\end{document}
