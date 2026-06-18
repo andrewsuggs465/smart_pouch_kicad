@@ -4797,8 +4797,9 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:BSS84"
+		(symbol "Transistor_FET:AO3400A"
 			(pin_names
+				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -4817,7 +4818,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "BSS84"
+			(property "Value" "AO3400A"
 				(at 5.08 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4841,7 +4842,7 @@
 					(justify left)
 				)
 			)
-			(property "Datasheet" "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf"
+			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
 				(at 5.08 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4853,7 +4854,7 @@
 					(justify left)
 				)
 			)
-			(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
+			(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4864,7 +4865,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "P-Channel MOSFET"
+			(property "ki_keywords" "N-Channel MOSFET"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4886,7 +4887,7 @@
 					)
 				)
 			)
-			(symbol "BSS84_0_1"
+			(symbol "AO3400A_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -4925,18 +4926,6 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0.762 0.508) (xy 0.762 -0.508)
 					)
 					(stroke
@@ -4959,6 +4948,30 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(circle
 					(center 1.651 0)
 					(radius 2.794)
@@ -4968,18 +4981,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 				(polyline
@@ -5030,7 +5031,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+						(xy 2.921 0.381) (xy 3.683 0.381)
 					)
 					(stroke
 						(width 0)
@@ -5042,7 +5043,7 @@
 				)
 				(polyline
 					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
 					)
 					(stroke
 						(width 0)
@@ -5053,7 +5054,7 @@
 					)
 				)
 			)
-			(symbol "BSS84_1_1"
+			(symbol "AO3400A_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -13200,7 +13201,7 @@
 	)
 	(rectangle
 		(start 246.38 13.97)
-		(end 449.58 101.6)
+		(end 449.58 118.11)
 		(stroke
 			(width 0)
 			(type default)
@@ -13308,7 +13309,7 @@
 	)
 	(rectangle
 		(start 347.98 21.59)
-		(end 449.58 86.36)
+		(end 449.58 71.12)
 		(stroke
 			(width 0)
 			(type default)
@@ -13446,6 +13447,16 @@
 		)
 		(uuid "3fdc4c16-bdc0-4a51-a707-4106b9648a3b")
 	)
+	(text "drain\n"
+		(exclude_from_sim no)
+		(at 313.436 58.166 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "40c76467-ac7b-4f29-8733-a0db7d463411")
+	)
 	(text "Biometric UART"
 		(exclude_from_sim no)
 		(at 266.446 24.638 0)
@@ -13495,6 +13506,16 @@
 			)
 		)
 		(uuid "54aa8ae2-d0b6-4ea8-a1e8-b82d90040b56")
+	)
+	(text "source\n"
+		(exclude_from_sim no)
+		(at 312.166 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6a17b74b-07f3-4e8a-ad18-381bd787437b")
 	)
 	(text "3608 Boost Circuit 12V\n"
 		(exclude_from_sim no)
@@ -13555,6 +13576,16 @@
 			)
 		)
 		(uuid "867b43f7-1207-4f83-8c9e-4541eadfc64c")
+	)
+	(text "gate\n"
+		(exclude_from_sim no)
+		(at 303.53 53.594 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8912a584-d45e-4b70-a872-a82736812a99")
 	)
 	(text "Battery JST 2.54mm 1x3P\n"
 		(exclude_from_sim no)
@@ -13618,7 +13649,7 @@
 	)
 	(text "Strobe Light\n"
 		(exclude_from_sim no)
-		(at 315.214 25.908 0)
+		(at 313.944 14.478 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13638,7 +13669,7 @@
 	)
 	(text "Accelerometer\n"
 		(exclude_from_sim no)
-		(at 314.198 72.644 0)
+		(at 324.358 72.644 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13656,37 +13687,11 @@
 		)
 		(uuid "f666a365-3acb-43ca-be05-68ef1c479d93")
 	)
-	(text_box ""
-		(exclude_from_sim no)
-		(at 285.75 21.59 0)
-		(size 62.23 46.99)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "20fe626e-44d5-48fd-8bb4-6aa428266702")
-	)
 	(junction
 		(at 38.1 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "00b81987-b513-4cb8-887e-1c6e55afe837")
-	)
-	(junction
-		(at 303.53 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0151fb6e-c7a5-4003-aa85-fd378aefc34b")
 	)
 	(junction
 		(at 444.5 200.66)
@@ -13717,6 +13722,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "07c710d3-1181-41e0-83dc-9bf5fe48326b")
+	)
+	(junction
+		(at 302.26 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b1884e6-ec77-4bbf-b80f-dcca57cc24e4")
 	)
 	(junction
 		(at 505.46 36.83)
@@ -13791,6 +13802,12 @@
 		(uuid "18eb789f-a09b-44ec-abb8-94926944d9c5")
 	)
 	(junction
+		(at 327.66 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1990fb80-8a85-4d4d-8ba0-29a6d95228ff")
+	)
+	(junction
 		(at 125.73 284.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -13815,16 +13832,22 @@
 		(uuid "1dd10632-8b59-4ecf-b80f-a9e721608e5d")
 	)
 	(junction
+		(at 381 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2272a4fb-3afe-4b98-a0b7-38a28f967b61")
+	)
+	(junction
 		(at 38.1 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "23e4025a-16cf-4537-b97a-e3f47973aaee")
 	)
 	(junction
-		(at 314.96 49.53)
+		(at 320.04 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3cf698b7-9523-402b-937b-80e3dcc44275")
+		(uuid "31a690e9-57d6-4485-a9c3-e34905f0d9d6")
 	)
 	(junction
 		(at 521.97 288.29)
@@ -13845,6 +13868,12 @@
 		(uuid "47fcd8ee-d050-4e78-91db-c4e2de181a5a")
 	)
 	(junction
+		(at 332.74 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e0f1df4-b271-4496-9177-ff047dd1fe86")
+	)
+	(junction
 		(at 422.91 179.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -13855,6 +13884,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "50b662e5-279a-4588-b6bd-705b147ade71")
+	)
+	(junction
+		(at 307.34 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "522cddde-6fbb-4cdf-a9c6-f53dbc3d600e")
+	)
+	(junction
+		(at 327.66 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5b954598-1f57-433a-8d58-a6c45c7e265e")
 	)
 	(junction
 		(at 38.1 96.52)
@@ -13881,10 +13922,10 @@
 		(uuid "68fbce24-ea46-4f79-bc36-520c4b43f130")
 	)
 	(junction
-		(at 280.67 63.5)
+		(at 95.25 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d95ff3f-e578-4db6-80c2-e3dfb03258be")
+		(uuid "6e3da54f-77e7-42aa-8786-c2408be49d16")
 	)
 	(junction
 		(at 462.28 224.79)
@@ -13905,10 +13946,10 @@
 		(uuid "768018e6-12ea-4dfa-841b-6e13d265148e")
 	)
 	(junction
-		(at 303.53 39.37)
+		(at 320.04 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7f383015-50c8-4a40-a3e9-527e86ebad70")
+		(uuid "7e23a68c-0df8-4ceb-b314-faf4e54f503a")
 	)
 	(junction
 		(at 509.27 165.1)
@@ -13927,12 +13968,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9162385a-0b73-4f9f-a9df-2152febdaa44")
-	)
-	(junction
-		(at 314.96 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9860235c-e8ef-439c-b1ea-5ab1289ce95f")
 	)
 	(junction
 		(at 80.01 80.01)
@@ -13957,12 +13992,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a9d47bd5-a456-4a1c-b6a3-0c8044a57e2a")
-	)
-	(junction
-		(at 314.96 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ad151e9a-77de-44ab-afb8-d57b78c77b25")
 	)
 	(junction
 		(at 416.56 179.07)
@@ -14019,12 +14048,6 @@
 		(uuid "c5a38589-038f-4da8-a122-25292ae540a1")
 	)
 	(junction
-		(at 314.96 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c846ba85-eae4-4e54-9a94-8fcbf1f9c0db")
-	)
-	(junction
 		(at 455.93 224.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -14067,16 +14090,10 @@
 		(uuid "d9b029c4-aed6-42ab-bcbf-98021d6ad8fe")
 	)
 	(junction
-		(at 314.96 60.96)
+		(at 332.74 24.13)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "db5d17ed-1648-434a-907e-c901c50dbf1d")
-	)
-	(junction
-		(at 300.99 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dcda5e1b-c4be-4f21-897e-70ee5e481242")
+		(uuid "dea20e88-5eba-43d9-afce-08cbbd48cd61")
 	)
 	(junction
 		(at 158.75 85.09)
@@ -14085,22 +14102,28 @@
 		(uuid "e0b2bec0-ed06-4db0-867a-c1eca9bde029")
 	)
 	(junction
+		(at 95.25 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e19060e1-9a5a-458d-8b20-b40e7da04dbf")
+	)
+	(junction
 		(at 359.41 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e2e95557-260f-4b3d-83cc-232f19a1c10a")
 	)
 	(junction
+		(at 342.9 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e5e1d615-5065-4728-ab7b-ef614aabdbdf")
+	)
+	(junction
 		(at 297.18 300.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8da0997-9aae-4a9c-93c5-191f0358870d")
-	)
-	(junction
-		(at 314.96 41.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ed4c5695-e5c3-42af-8523-4c1e8af848fa")
 	)
 	(junction
 		(at 284.48 147.32)
@@ -14127,7 +14150,7 @@
 		(uuid "fea18cd2-56be-4256-b454-9dcf41082f89")
 	)
 	(no_connect
-		(at 328.93 87.63)
+		(at 339.09 87.63)
 		(uuid "0696c0e9-cf70-4bee-8d08-52a79604aa3e")
 	)
 	(no_connect
@@ -14367,7 +14390,7 @@
 		(uuid "9ad58f60-3ee1-44de-9f69-4bfe766d7564")
 	)
 	(no_connect
-		(at 303.53 92.71)
+		(at 313.69 92.71)
 		(uuid "9bfa6e15-6c99-4b8c-8c83-18069aed419d")
 	)
 	(no_connect
@@ -14682,6 +14705,16 @@
 	)
 	(wire
 		(pts
+			(xy 308.61 52.07) (xy 307.34 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c27ab4c-4be2-429d-b18f-3c040e1b7589")
+	)
+	(wire
+		(pts
 			(xy 519.43 284.48) (xy 519.43 289.56)
 		)
 		(stroke
@@ -14719,16 +14752,6 @@
 			(type default)
 		)
 		(uuid "0ff11439-e9b3-4a83-aa78-6c4cbe039141")
-	)
-	(wire
-		(pts
-			(xy 303.53 39.37) (xy 303.53 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "10918925-5e16-450c-ad48-3bce03b49778")
 	)
 	(wire
 		(pts
@@ -14772,6 +14795,16 @@
 	)
 	(wire
 		(pts
+			(xy 327.66 46.99) (xy 332.74 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1467f18a-9cc9-45b0-a5b1-42aace785e63")
+	)
+	(wire
+		(pts
 			(xy 412.75 154.94) (xy 412.75 161.29)
 		)
 		(stroke
@@ -14799,16 +14832,6 @@
 			(type default)
 		)
 		(uuid "163eace2-81fe-49b5-befa-6d2b69e8604c")
-	)
-	(wire
-		(pts
-			(xy 314.96 57.15) (xy 314.96 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17f08b6f-f2a0-4424-8506-9aaf3eb26e9c")
 	)
 	(wire
 		(pts
@@ -15392,6 +15415,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 52.07) (xy 303.53 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47a90154-b35c-4cde-b602-c65321abd88a")
+	)
+	(wire
+		(pts
 			(xy 121.92 64.77) (xy 109.22 64.77)
 		)
 		(stroke
@@ -15502,6 +15535,26 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 58.42) (xy 307.34 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5486a297-a468-4dd5-8b35-5e28db9408a6")
+	)
+	(wire
+		(pts
+			(xy 327.66 24.13) (xy 332.74 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54bbc4c8-b833-4bd2-803c-1367751d5efd")
+	)
+	(wire
+		(pts
 			(xy 80.01 93.98) (xy 80.01 91.44)
 		)
 		(stroke
@@ -15592,6 +15645,16 @@
 	)
 	(wire
 		(pts
+			(xy 381 27.94) (xy 381 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d5fa5e6-66cc-4dfa-b76a-5cc50544718b")
+	)
+	(wire
+		(pts
 			(xy 62.23 99.06) (xy 64.77 99.06)
 		)
 		(stroke
@@ -15599,16 +15662,6 @@
 			(type default)
 		)
 		(uuid "5e990c39-4934-4e43-88a8-009bd44bbf65")
-	)
-	(wire
-		(pts
-			(xy 297.18 87.63) (xy 300.99 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5efb628f-ca02-453a-a37a-2a2fcdfd7ccc")
 	)
 	(wire
 		(pts
@@ -15652,17 +15705,7 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 85.09) (xy 300.99 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6222099d-9a5d-4884-814d-2aea7942b1fe")
-	)
-	(wire
-		(pts
-			(xy 300.99 87.63) (xy 303.53 87.63)
+			(xy 297.18 87.63) (xy 302.26 87.63)
 		)
 		(stroke
 			(width 0)
@@ -15782,16 +15825,6 @@
 	)
 	(wire
 		(pts
-			(xy 328.93 72.39) (xy 328.93 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "708cd456-811a-464c-ab2c-c84d3613838c")
-	)
-	(wire
-		(pts
 			(xy 414.02 168.91) (xy 414.02 156.21)
 		)
 		(stroke
@@ -15879,6 +15912,16 @@
 			(type default)
 		)
 		(uuid "7bc82f12-c798-406c-b901-d6c6b0fe2042")
+	)
+	(wire
+		(pts
+			(xy 332.74 46.99) (xy 339.09 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c22e3c8-2f3b-421a-be4c-daaf9420c233")
 	)
 	(wire
 		(pts
@@ -16082,6 +16125,16 @@
 	)
 	(wire
 		(pts
+			(xy 302.26 87.63) (xy 313.69 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e97f205-a79c-456e-8de5-75ef537f1f10")
+	)
+	(wire
+		(pts
 			(xy 38.1 80.01) (xy 38.1 96.52)
 		)
 		(stroke
@@ -16162,16 +16215,6 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 41.91) (xy 314.96 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98dd5885-107b-4895-b25c-3378d087dc5d")
-	)
-	(wire
-		(pts
 			(xy 120.65 69.85) (xy 120.65 74.93)
 		)
 		(stroke
@@ -16249,16 +16292,6 @@
 			(type default)
 		)
 		(uuid "9e0a4dd8-bc10-4395-8df6-223ab44607db")
-	)
-	(wire
-		(pts
-			(xy 328.93 81.28) (xy 328.93 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e689b1e-fdb9-4f2a-a3d3-3ae1b5e95450")
 	)
 	(wire
 		(pts
@@ -16432,6 +16465,16 @@
 	)
 	(wire
 		(pts
+			(xy 312.42 24.13) (xy 320.04 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1e260b1-97b0-40d5-bf98-2ace8c47c4df")
+	)
+	(wire
+		(pts
 			(xy 64.77 80.01) (xy 67.31 80.01)
 		)
 		(stroke
@@ -16502,6 +16545,16 @@
 	)
 	(wire
 		(pts
+			(xy 381 30.48) (xy 381 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1ae0547-e6b3-4939-a69d-04f4bee19c38")
+	)
+	(wire
+		(pts
 			(xy 64.77 31.75) (xy 67.31 31.75)
 		)
 		(stroke
@@ -16509,16 +16562,6 @@
 			(type default)
 		)
 		(uuid "c1f01721-3f83-4908-9e04-9fc0656c35c1")
-	)
-	(wire
-		(pts
-			(xy 314.96 49.53) (xy 314.96 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c353531d-1b1d-4149-a39a-b693f3cc9d3b")
 	)
 	(wire
 		(pts
@@ -16602,16 +16645,6 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 49.53) (xy 314.96 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbd859fb-f4a3-40d7-a6ce-707033d5a6a3")
-	)
-	(wire
-		(pts
 			(xy 440.69 171.45) (xy 440.69 161.29)
 		)
 		(stroke
@@ -16619,6 +16652,16 @@
 			(type default)
 		)
 		(uuid "cbe906cc-cdea-411a-a6f9-a7d30114110f")
+	)
+	(wire
+		(pts
+			(xy 320.04 46.99) (xy 327.66 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc91019e-ad26-4fa0-b78e-7241fc3dc2ea")
 	)
 	(wire
 		(pts
@@ -16652,13 +16695,13 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 45.72) (xy 314.96 49.53)
+			(xy 339.09 85.09) (xy 342.9 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d1cc2200-fd94-4c76-9dab-54e7f7f251fb")
+		(uuid "d2629f51-fefe-4703-a760-b4006af69717")
 	)
 	(wire
 		(pts
@@ -16699,6 +16742,16 @@
 			(type default)
 		)
 		(uuid "db663619-16b3-48ff-8b35-0f77431aac67")
+	)
+	(wire
+		(pts
+			(xy 332.74 24.13) (xy 339.09 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc1a3b36-1d23-4f63-827a-4ad69358cd3e")
 	)
 	(wire
 		(pts
@@ -16852,16 +16905,6 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 60.96) (xy 314.96 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e88b0683-5e5d-4cd8-9206-127ca41e36de")
-	)
-	(wire
-		(pts
 			(xy 80.01 83.82) (xy 80.01 80.01)
 		)
 		(stroke
@@ -17012,36 +17055,6 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 53.34) (xy 314.96 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f96a9ef0-f6c0-4feb-876a-ebd0fcc99782")
-	)
-	(wire
-		(pts
-			(xy 294.64 85.09) (xy 303.53 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f998b1f2-97b2-4214-aa2d-e89f5197ae88")
-	)
-	(wire
-		(pts
-			(xy 314.96 38.1) (xy 314.96 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa21a4e8-8594-4929-bfcb-8b5acbbe6c8e")
-	)
-	(wire
-		(pts
 			(xy 330.2 278.13) (xy 344.17 278.13)
 		)
 		(stroke
@@ -17052,6 +17065,16 @@
 	)
 	(wire
 		(pts
+			(xy 342.9 85.09) (xy 349.25 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa9aab04-a204-459a-8c7f-aeec8ee9835c")
+	)
+	(wire
+		(pts
 			(xy 121.92 67.31) (xy 115.57 67.31)
 		)
 		(stroke
@@ -17059,6 +17082,16 @@
 			(type default)
 		)
 		(uuid "fa9fee21-f222-4a46-b7e8-60316f2d96c2")
+	)
+	(wire
+		(pts
+			(xy 316.23 46.99) (xy 320.04 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb80a97d-ca89-4438-bed2-7f1cdde04ccf")
 	)
 	(wire
 		(pts
@@ -17089,6 +17122,16 @@
 			(type default)
 		)
 		(uuid "fe8ad695-4a25-4fa8-9af2-88d4f779d500")
+	)
+	(wire
+		(pts
+			(xy 320.04 24.13) (xy 327.66 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fee0e5e2-541a-4e9f-afdf-eb60b47ab248")
 	)
 	(wire
 		(pts
@@ -17241,7 +17284,7 @@
 		(uuid "1e3c036a-64d8-4f6e-946d-87927dee390b")
 	)
 	(label "ACC_INT2"
-		(at 303.53 97.79 180)
+		(at 313.69 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17471,7 +17514,7 @@
 		(uuid "57ecf2fa-222b-4fd2-abfc-51d671531aa2")
 	)
 	(label "ACC_SCL"
-		(at 328.93 85.09 0)
+		(at 349.25 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17499,6 +17542,16 @@
 			(justify right bottom)
 		)
 		(uuid "5f3b170a-96e3-4446-905a-5811eaa1c76f")
+	)
+	(label "Strobe_In"
+		(at 295.91 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5f9bc92f-94bb-427e-bf75-06d9ff0fd794")
 	)
 	(label "CC2"
 		(at 444.5 186.69 180)
@@ -17551,7 +17604,7 @@
 		(uuid "6ad7d6ab-7f4f-480e-9774-8e369958fde5")
 	)
 	(label "ACC_INT1"
-		(at 303.53 95.25 180)
+		(at 313.69 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17589,16 +17642,6 @@
 			(justify left bottom)
 		)
 		(uuid "73a76884-3dae-4d8b-a18e-80ca9403a34e")
-	)
-	(label "Strobe_In"
-		(at 295.91 44.45 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "74410e8a-369d-4166-8735-36981a5bd906")
 	)
 	(label "USB_D-"
 		(at 330.2 290.83 0)
@@ -18765,97 +18808,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 326.39 53.34 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0874da88-498f-4730-bbda-7b4589ba7483")
-		(property "Reference" "R11"
-			(at 326.39 46.99 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 49.53 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 55.118 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "881a7ef1-f6f9-4b3f-87e0-ece63ece3a01")
-		)
-		(pin "2"
-			(uuid "ff11e600-d7ed-418f-882a-b7fc386edc3e")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 541.02 274.32 90)
 		(unit 1)
@@ -19413,6 +19365,84 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR061")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 95.25 31.75 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0d7881f6-a9c5-48c6-be4b-efbda40ec232")
+		(property "Reference" "#FLG02"
+			(at 93.345 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 91.44 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 95.25 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dfbffb0f-872a-4c7f-9a70-f803e02d38ce")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -20151,97 +20181,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "C_ANT2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 326.39 49.53 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "16762610-0417-48b5-853e-791e4c84bf6d")
-		(property "Reference" "R10"
-			(at 326.39 43.18 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 45.72 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 51.308 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a6c5214d-10fc-47c2-b8d0-6960a252be77")
-		)
-		(pin "2"
-			(uuid "0f091722-16db-4e60-90df-47deaf7f71c8")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -21365,6 +21304,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 313.69 52.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "225dc7fb-86e3-481a-afe7-0cefb1160c48")
+		(property "Reference" "Q1"
+			(at 320.04 50.7999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 320.04 53.3399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 318.77 53.975 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 318.77 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 313.69 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d9ce6187-fd36-4765-8f3e-7632047c7880")
+		)
+		(pin "2"
+			(uuid "6ee2b7a9-9f12-4606-ad15-53a7112ab9f9")
+		)
+		(pin "3"
+			(uuid "c14284b0-8dc0-4fc7-bc87-6c4d4ae6d4e3")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:19-237_R6GHBHC-A01_2T")
 		(at 405.13 160.02 0)
 		(unit 1)
@@ -21570,97 +21597,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "C31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 326.39 57.15 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "26596d89-775c-46f6-8b8d-cf2fe9d2271e")
-		(property "Reference" "R12"
-			(at 326.39 50.8 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 53.34 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 58.928 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c00f4a1f-6c9b-4ad8-905c-3c9c3470c5af")
-		)
-		(pin "2"
-			(uuid "47375f07-a34b-48ee-93d5-acff615cb88c")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -22893,8 +22829,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 330.2 53.34 90)
+		(lib_id "Device:LED")
+		(at 320.04 35.56 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22902,10 +22838,19 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3a4d5918-67a8-4bb9-8f4f-a42e1ba604ad")
-		(property "Reference" "#PWR067"
-			(at 336.55 53.34 0)
+		(uuid "3b445de8-6b78-4d90-b112-ba0674c65b31")
+		(property "Reference" "D4"
+			(at 317.246 35.306 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 314.96 33.9725 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22915,19 +22860,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 334.01 53.3399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 53.34 0)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 320.04 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22938,7 +22872,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 53.34 0)
+			(at 320.04 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22948,8 +22882,30 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 53.34 0)
+		(property "Description" "Light emitting diode"
+			(at 320.04 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 320.04 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 281.94 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22960,12 +22916,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "476ad6d2-d7ee-4fab-b333-21febbb4ac98")
+			(uuid "c1896485-6e1e-41a0-87a7-18f9eae83970")
+		)
+		(pin "2"
+			(uuid "812e7851-6846-4875-9189-8613d7d82d99")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR067")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -24583,108 +24542,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR0126")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 49.53 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5079df1f-6251-4a86-9a4e-c7d38c4aa78d")
-		(property "Reference" "D8"
-			(at 319.024 46.736 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1a9fe201-92e0-4186-9d65-fee70e0ed6b7")
-		)
-		(pin "2"
-			(uuid "4805c50b-1de4-40f7-a8eb-cac414d7bd83")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -26579,6 +26436,108 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 339.09 35.56 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5f8d22eb-17ca-47be-a123-41fc534b97f7")
+		(property "Reference" "D10"
+			(at 336.296 35.306 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 334.01 33.9725 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 339.09 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 339.09 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 339.09 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 300.99 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3c9087f-2c46-4d1f-a8bf-d6121bfdd301")
+		)
+		(pin "2"
+			(uuid "dc046f3e-9d61-4212-9765-4d18375a025c")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 468.63 228.6 0)
 		(unit 1)
@@ -27313,7 +27272,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 328.93 92.71 90)
+		(at 339.09 92.71 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -27324,7 +27283,7 @@
 		(fields_autoplaced yes)
 		(uuid "6b5b758b-5de3-41ff-9869-d4c42e44c5fa")
 		(property "Reference" "#PWR029"
-			(at 335.28 92.71 0)
+			(at 345.44 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27335,7 +27294,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 332.74 92.7099 90)
+			(at 342.9 92.7099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -27346,7 +27305,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 328.93 92.71 0)
+			(at 339.09 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27357,7 +27316,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 92.71 0)
+			(at 339.09 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27368,7 +27327,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 328.93 92.71 0)
+			(at 339.09 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27663,7 +27622,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 294.64 85.09 270)
+		(at 313.69 85.09 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -27674,7 +27633,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d2e17f4-2056-4eec-9324-5aa87b0532ac")
 		(property "Reference" "#PWR0118"
-			(at 288.29 85.09 0)
+			(at 307.34 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27685,7 +27644,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 290.83 85.0899 90)
+			(at 309.88 85.0899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -27696,7 +27655,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 294.64 85.09 0)
+			(at 313.69 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27707,7 +27666,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 294.64 85.09 0)
+			(at 313.69 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27718,7 +27677,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 294.64 85.09 0)
+			(at 313.69 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27911,8 +27870,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 280.67 63.5 0)
+		(lib_id "Device:LED")
+		(at 332.74 35.56 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -27920,9 +27879,19 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "6eee8711-c3d7-4ec5-bbb0-db95b4394ec0")
-		(property "Reference" "#FLG002"
-			(at 280.67 65.405 0)
+		(uuid "705005fa-4396-49b8-a375-a84bbd9d9fdb")
+		(property "Reference" "D8"
+			(at 329.946 35.306 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 327.66 33.9725 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27932,8 +27901,8 @@
 				)
 			)
 		)
-		(property "Value" "PWR_FLAG"
-			(at 280.67 67.31 0)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 332.74 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27943,8 +27912,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 280.67 63.5 0)
+		(property "Datasheet" ""
+			(at 332.74 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27954,8 +27923,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 280.67 63.5 0)
+		(property "Description" "Light emitting diode"
+			(at 332.74 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27965,8 +27934,19 @@
 				)
 			)
 		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 280.67 63.5 0)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 332.74 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 294.64 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27977,12 +27957,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "b8a5860a-9b16-4896-a0ec-71837528d5d6")
+			(uuid "98f7d33f-286f-40f9-9041-58fc71348d59")
+		)
+		(pin "2"
+			(uuid "4d3a44ec-b625-4eb4-b8ad-54d59d4ecd45")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#FLG002")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -28252,7 +28235,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:BMA400")
-		(at 316.23 91.44 0)
+		(at 326.39 91.44 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -28263,7 +28246,7 @@
 		(fields_autoplaced yes)
 		(uuid "73f0b072-479f-4345-897c-9aa0c666a145")
 		(property "Reference" "U4"
-			(at 316.23 77.47 0)
+			(at 326.39 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -28273,7 +28256,7 @@
 			)
 		)
 		(property "Value" "BMA400"
-			(at 316.23 80.01 0)
+			(at 326.39 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -28283,7 +28266,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:LGA-12_L2.0-W2.0-P0.50-BL"
-			(at 316.23 105.41 0)
+			(at 326.39 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28294,7 +28277,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Motion-Sensors-Accelerometers_Bosch-Sensortec-BMA400_C437655.html"
-			(at 316.23 107.95 0)
+			(at 326.39 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28305,7 +28288,7 @@
 			)
 		)
 		(property "Description" "LGA-12(2x2) Accelerometers RoHS"
-			(at 316.23 91.44 0)
+			(at 326.39 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28316,7 +28299,7 @@
 			)
 		)
 		(property "Manufacturer" "Bosch(博世)"
-			(at 316.23 110.49 0)
+			(at 326.39 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28327,7 +28310,7 @@
 			)
 		)
 		(property "MPN" "BMA400"
-			(at 316.23 113.03 0)
+			(at 326.39 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28338,7 +28321,7 @@
 			)
 		)
 		(property "LCSC Part" "C437655"
-			(at 316.23 115.57 0)
+			(at 326.39 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28900,85 +28883,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 330.2 49.53 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7eed311b-ffb3-455b-b27c-aaebc9af7c15")
-		(property "Reference" "#PWR066"
-			(at 336.55 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 334.01 49.5299 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6243f258-6ac6-4a3f-b537-d48b541edb01")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR066")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 77.47 250.19 270)
 		(unit 1)
 		(body_style 1)
@@ -29051,6 +28955,190 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR0125")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 327.66 35.56 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7fbe7095-003b-4db7-a1c9-df657e2d04d9")
+		(property "Reference" "D6"
+			(at 324.866 35.306 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 322.58 33.9725 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 327.66 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 327.66 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 327.66 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 327.66 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 289.56 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "322864fc-59c0-4711-aa47-8ac9e9a25dc7")
+		)
+		(pin "2"
+			(uuid "c4392f1d-1a69-4772-be7b-2e8f5b49baf6")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 307.34 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7fe65278-a64d-4074-9031-c3f33bd45401")
+		(property "Reference" "R12"
+			(at 309.88 60.9599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 309.88 63.4999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 305.562 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 307.34 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4cc53d22-e28d-4e99-b546-18516793a442")
+		)
+		(pin "2"
+			(uuid "b69a8bde-7cf2-4ce5-ad81-745c5e804e9c")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -29214,7 +29302,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 328.93 77.47 0)
+		(at 342.9 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -29224,7 +29312,7 @@
 		(dnp no)
 		(uuid "824688ae-880a-4822-b034-e24dabeccf82")
 		(property "Reference" "R27"
-			(at 332.486 75.692 0)
+			(at 346.456 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29234,7 +29322,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 332.486 79.502 0)
+			(at 346.456 83.312 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29244,7 +29332,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 328.93 77.47 0)
+			(at 342.9 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29255,7 +29343,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 77.47 0)
+			(at 342.9 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29266,7 +29354,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 328.93 77.47 0)
+			(at 342.9 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29277,7 +29365,7 @@
 			)
 		)
 		(property "LCSC Part" "C25900"
-			(at 0 0 0)
+			(at 13.97 3.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29382,108 +29470,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 53.34 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "84778486-b33d-4322-9863-c9d178243fd9")
-		(property "Reference" "D9"
-			(at 319.278 51.308 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "38e9aca0-675c-44d8-a7d3-6b2a60dbe232")
-		)
-		(pin "2"
-			(uuid "f0aa7f39-767c-418a-b6d1-1910cdcf6527")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 77.47 267.97 270)
 		(unit 1)
@@ -29563,178 +29549,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 326.39 38.1 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8514c4fe-c95b-45fd-8ae9-c95d588c504a")
-		(property "Reference" "R7"
-			(at 297.18 31.75 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 34.29 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 39.878 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b854ac82-bbec-4719-a24f-202e6e25241f")
-		)
-		(pin "2"
-			(uuid "53b59d0a-aad2-4dca-b182-855562864549")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 330.2 64.77 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "854b75f9-9252-44b0-861f-40e9837f69ae")
-		(property "Reference" "#PWR071"
-			(at 336.55 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 334.01 64.7699 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b65956c6-a874-46fe-84a3-3745dd85e79e")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR071")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+1V8")
-		(at 300.99 77.47 0)
+		(at 302.26 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -29744,7 +29560,7 @@
 		(dnp no)
 		(uuid "893e5421-79f6-4ffe-90de-4110697154e8")
 		(property "Reference" "#PWR_I2C_SDA_PU01"
-			(at 300.99 81.026 0)
+			(at 302.26 83.566 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29755,7 +29571,7 @@
 			)
 		)
 		(property "Value" "+1V8"
-			(at 300.99 72.39 0)
+			(at 302.26 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29765,7 +29581,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 300.99 77.47 0)
+			(at 302.26 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29775,7 +29591,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 77.47 0)
+			(at 302.26 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29785,7 +29601,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 314.96 69.596 0)
+			(at 316.23 72.136 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29902,7 +29718,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 318.77 45.72 180)
+		(at 332.74 43.18 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -29910,9 +29726,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "90001cf1-7963-4ff6-82bf-b91d4cc5bc62")
-		(property "Reference" "D7"
-			(at 319.278 43.942 0)
+		(uuid "8e0e2d40-2112-433d-9cdd-4f439a6b13be")
+		(property "Reference" "D9"
+			(at 329.946 42.926 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29922,7 +29738,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 320.3575 40.64 0)
+			(at 327.66 41.5925 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29933,7 +29749,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 45.72 0)
+			(at 332.74 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29944,7 +29760,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 45.72 0)
+			(at 332.74 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29955,7 +29771,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 318.77 45.72 0)
+			(at 332.74 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29966,7 +29782,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 45.72 0)
+			(at 332.74 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29977,7 +29793,7 @@
 			)
 		)
 		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
+			(at 294.64 361.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29988,15 +29804,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "4eaa3830-9469-4999-8c3a-4566c1d9c562")
+			(uuid "c2234443-fe19-4c11-8a1c-88fb9d321aef")
 		)
 		(pin "2"
-			(uuid "91ce202b-cf88-4405-96e1-3f6196cc4b52")
+			(uuid "d13c128f-0a38-4084-b17d-10a1849cede2")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D7")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -30630,108 +30446,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "C21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 41.91 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9a059224-a4a3-4cf1-a2ea-4bb60a66225b")
-		(property "Reference" "D6"
-			(at 319.278 39.878 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a1a3fbd1-7438-4a5e-adad-edfbcdb29106")
-		)
-		(pin "2"
-			(uuid "6dd3b272-b42c-4b3b-8286-46d706149ae5")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -31484,84 +31198,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 303.53 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a31a32bf-a277-4b50-9d5a-c8ba935cf16d")
-		(property "Reference" "#PWR035"
-			(at 303.53 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 303.53 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 303.53 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 303.53 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 303.53 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "24a106a9-546a-476f-a406-989d69b66739")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:Crystal")
 		(at 359.41 166.37 90)
 		(unit 1)
@@ -31723,7 +31359,7 @@
 	)
 	(symbol
 		(lib_id "power:+15V")
-		(at 381 35.56 0)
+		(at 381 27.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -31734,7 +31370,7 @@
 		(fields_autoplaced yes)
 		(uuid "a4e12067-1a40-467c-9737-6be1967fde57")
 		(property "Reference" "#PWR098"
-			(at 381 39.37 0)
+			(at 381 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31745,7 +31381,7 @@
 			)
 		)
 		(property "Value" "+15V"
-			(at 381 30.48 0)
+			(at 381 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31755,7 +31391,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 381 35.56 0)
+			(at 381 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31766,7 +31402,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 381 35.56 0)
+			(at 381 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31777,7 +31413,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+15V\""
-			(at 381 35.56 0)
+			(at 381 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32265,6 +31901,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 339.09 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a960ef99-aaa9-4598-a1d1-6618655f3572")
+		(property "Reference" "R10"
+			(at 341.63 26.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "39R"
+			(at 341.63 29.2099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 337.312 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "2W"
+			(at 339.09 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "51788875-d3c1-4a9b-a5fb-20991e8af020")
+		)
+		(pin "1"
+			(uuid "18ab2440-75a9-4021-80ba-88af9aaf285a")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 541.02 199.39 0)
 		(unit 1)
@@ -32602,8 +32319,90 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 377.19 30.48 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ae7ebc16-c072-489e-ba11-1f7f81ecca2f")
+		(property "Reference" "C14"
+			(at 378.4601 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 375.9201 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 373.38 31.4452 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 377.19 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "8f1838b0-c17f-4421-98dc-f0f83056fb40")
+		)
+		(pin "1"
+			(uuid "02c55671-ba50-4804-a1d4-f2c3c580a404")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+1V8")
-		(at 328.93 72.39 0)
+		(at 342.9 77.47 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -32613,7 +32412,7 @@
 		(dnp no)
 		(uuid "af0b2460-bf58-4416-a41b-ed1e842dc3dc")
 		(property "Reference" "#PWR_I2C_SCL_PU01"
-			(at 328.93 75.946 0)
+			(at 342.9 81.026 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32624,7 +32423,7 @@
 			)
 		)
 		(property "Value" "+1V8"
-			(at 328.422 69.596 0)
+			(at 342.392 74.676 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32634,7 +32433,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 328.93 72.39 0)
+			(at 342.9 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32644,7 +32443,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 72.39 0)
+			(at 342.9 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32654,7 +32453,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 317.5 75.184 0)
+			(at 331.47 80.264 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32757,7 +32556,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V8")
-		(at 328.93 90.17 270)
+		(at 339.09 90.17 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -32768,7 +32567,7 @@
 		(fields_autoplaced yes)
 		(uuid "af92ef5a-7581-4e5f-b3d7-5515e97fd244")
 		(property "Reference" "#PWR0121"
-			(at 325.12 90.17 0)
+			(at 335.28 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32779,7 +32578,7 @@
 			)
 		)
 		(property "Value" "+1V8"
-			(at 332.74 90.1699 90)
+			(at 342.9 90.1699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32790,7 +32589,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 328.93 90.17 0)
+			(at 339.09 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32801,7 +32600,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 90.17 0)
+			(at 339.09 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32812,7 +32611,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 328.93 90.17 0)
+			(at 339.09 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33002,85 +32801,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 330.2 38.1 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b0831fa5-61b4-41e9-bbd9-94c3e834792e")
-		(property "Reference" "#PWR034"
-			(at 336.55 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 334.01 38.0999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8ac725f7-b95d-4310-8335-486ae4e85e55")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Driver_Motor:DRV8871DDA")
 		(at 381 45.72 0)
 		(unit 1)
@@ -33263,6 +32983,108 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 339.09 43.18 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b2b1f0de-e958-45d9-b49f-b89f0e8d8c5d")
+		(property "Reference" "D11"
+			(at 336.296 42.926 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 334.01 41.5925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 339.09 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 339.09 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 339.09 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 300.99 361.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0e6515fe-76cf-4102-aa46-02ccd527bd79")
+		)
+		(pin "2"
+			(uuid "05a514cd-295c-46c0-98bc-55072ac49415")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 293.37 133.35 90)
 		(unit 1)
@@ -33355,7 +33177,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V8")
-		(at 328.93 97.79 270)
+		(at 339.09 97.79 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -33366,7 +33188,7 @@
 		(fields_autoplaced yes)
 		(uuid "b56a1d60-738c-4ecc-9bd0-05a1d7e060f4")
 		(property "Reference" "#PWR0120"
-			(at 325.12 97.79 0)
+			(at 335.28 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33377,7 +33199,7 @@
 			)
 		)
 		(property "Value" "+1V8"
-			(at 332.74 97.7899 90)
+			(at 342.9 97.7899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -33388,7 +33210,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 328.93 97.79 0)
+			(at 339.09 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33399,7 +33221,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 97.79 0)
+			(at 339.09 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33410,7 +33232,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 328.93 97.79 0)
+			(at 339.09 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33670,97 +33492,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 326.39 64.77 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b78afb6c-e62b-4115-9cea-739f769e86dc")
-		(property "Reference" "R14"
-			(at 326.39 58.42 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 60.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 66.548 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a425221b-bcd5-4c1f-a317-8ca51af18063")
-		)
-		(pin "2"
-			(uuid "0ab8dbbc-9e19-4205-95ab-de03116f07e6")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 284.48 138.43 180)
 		(unit 1)
@@ -33840,8 +33571,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 330.2 41.91 90)
+		(lib_id "Device:R")
+		(at 299.72 52.07 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -33850,10 +33581,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "bab1e765-2bb1-4f14-bb17-7e8673465a76")
-		(property "Reference" "#PWR048"
-			(at 336.55 41.91 0)
-			(hide yes)
+		(uuid "b8f3222b-d751-433b-bbe6-00362dde59ac")
+		(property "Reference" "R11"
+			(at 299.72 45.72 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -33862,19 +33592,18 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 334.01 41.9099 90)
+		(property "Value" "150R"
+			(at 299.72 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 330.2 41.91 0)
+			(at 299.72 53.848 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33885,7 +33614,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 41.91 0)
+			(at 299.72 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33895,8 +33624,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 41.91 0)
+		(property "Description" "Resistor"
+			(at 299.72 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33907,12 +33636,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "c48c22c4-e4b6-4ff9-825a-d39f3916b68c")
+			(uuid "33c9b837-4111-4a4b-a57a-b0cd5e511f81")
+		)
+		(pin "2"
+			(uuid "f32d2c24-5f09-4aa3-b014-60614f444613")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR048")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -34163,6 +33895,84 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR087")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 312.42 24.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bcc1016b-9bc7-4f8c-9f67-9d6d8b00f843")
+		(property "Reference" "#PWR048"
+			(at 312.42 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+12V"
+			(at 312.42 19.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 312.42 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 312.42 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 312.42 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ea0de2f3-9606-4ff4-af3d-0f947de1e117")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -34502,7 +34312,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 328.93 95.25 90)
+		(at 339.09 95.25 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -34513,7 +34323,7 @@
 		(fields_autoplaced yes)
 		(uuid "c29aa1ed-44a2-4fb2-bb29-f1fe884e02bb")
 		(property "Reference" "#PWR0108"
-			(at 335.28 95.25 0)
+			(at 345.44 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34524,7 +34334,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 332.74 95.2499 90)
+			(at 342.9 95.2499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34535,7 +34345,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 328.93 95.25 0)
+			(at 339.09 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34546,7 +34356,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 328.93 95.25 0)
+			(at 339.09 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34557,7 +34367,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 328.93 95.25 0)
+			(at 339.09 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34580,8 +34390,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 326.39 41.91 90)
+		(lib_id "power:GND")
+		(at 373.38 30.48 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -34590,9 +34400,10 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c373eb7f-7b45-4d26-ab8a-05b684f26c9a")
-		(property "Reference" "R8"
-			(at 326.39 35.56 90)
+		(uuid "c49cf45d-c1b7-42c6-8b82-8011908055ca")
+		(property "Reference" "#PWR0130"
+			(at 367.03 30.48 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34601,8 +34412,8 @@
 				)
 			)
 		)
-		(property "Value" "4.7"
-			(at 326.39 38.1 90)
+		(property "Value" "GND"
+			(at 368.3 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34611,8 +34422,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 43.688 90)
+		(property "Footprint" ""
+			(at 373.38 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34623,7 +34434,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 326.39 41.91 0)
+			(at 373.38 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34633,19 +34444,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 326.39 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 373.38 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34656,15 +34456,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ed1cff2a-c0cb-4386-8edd-aed5a5ed5832")
-		)
-		(pin "2"
-			(uuid "f55c238e-534b-4214-8778-d173cc94372e")
+			(uuid "2b00b338-e920-479d-a5af-c1e6b095de8e")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R8")
+					(reference "#PWR0130")
 					(unit 1)
 				)
 			)
@@ -34750,8 +34547,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 330.2 57.15 90)
+		(lib_id "Device:R")
+		(at 320.04 27.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -34760,31 +34557,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c4d91f49-44a8-4198-881b-c9bdf4846da7")
-		(property "Reference" "#PWR069"
-			(at 336.55 57.15 0)
-			(hide yes)
+		(uuid "c4ec9ebc-444f-45d8-ad1e-1f6117562fca")
+		(property "Reference" "R7"
+			(at 322.58 26.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 334.01 57.1499 90)
+		(property "Value" "39R"
+			(at 322.58 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 330.2 57.15 0)
+			(at 318.262 27.94 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34795,7 +34592,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 57.15 0)
+			(at 320.04 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34805,9 +34602,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 57.15 0)
-			(hide yes)
+		(property "Description" "2W"
+			(at 320.04 27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34815,14 +34611,17 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "2"
+			(uuid "96698fe1-88fa-4433-9df0-c3a9b795be90")
 		)
 		(pin "1"
-			(uuid "de3b7fe1-4e84-45ea-b39a-25039aebb73c")
+			(uuid "5f9fb6ac-3060-41c8-9567-85398869e01b")
 		)
 		(instances
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR069")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -34987,7 +34786,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 300.99 81.28 0)
+		(at 302.26 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -34997,7 +34796,7 @@
 		(dnp no)
 		(uuid "c81d4321-bdbd-41b1-98f8-6b74b38a774c")
 		(property "Reference" "R26"
-			(at 296.672 79.248 0)
+			(at 297.942 81.788 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -35007,7 +34806,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 297.18 81.788 0)
+			(at 298.45 84.328 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -35017,7 +34816,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 300.99 81.28 0)
+			(at 302.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35028,7 +34827,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 81.28 0)
+			(at 302.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35039,7 +34838,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 300.99 81.28 0)
+			(at 302.26 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35050,7 +34849,7 @@
 			)
 		)
 		(property "LCSC Part" "C25900"
-			(at 0 0 0)
+			(at 1.27 2.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35070,97 +34869,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "R26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 326.39 45.72 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c888a398-544d-44f4-befd-e0c5307cc416")
-		(property "Reference" "R9"
-			(at 326.39 39.37 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 41.91 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 47.498 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6e7d8723-2451-4cac-b972-ddc0d5fc9d75")
-		)
-		(pin "2"
-			(uuid "f66a5895-5b7e-46c8-b248-85a5d30c0f0e")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -35316,6 +35024,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 95.25 80.01 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ca92ff9d-4dc2-460e-83e7-bbd9b44c921b")
+		(property "Reference" "#FLG03"
+			(at 93.345 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 91.44 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 95.25 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "26878638-6f0c-44cb-84ee-c68e1086bba4")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#FLG03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 349.25 279.4 90)
 		(unit 1)
@@ -35401,97 +35187,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 326.39 60.96 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cbb15975-699f-452d-876e-7b04bed7e5db")
-		(property "Reference" "R13"
-			(at 326.39 54.61 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7"
-			(at 326.39 57.15 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 326.39 62.738 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 326.39 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 326.39 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C25169"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7435332d-ee5b-4595-9da8-7fc579b8263f")
-		)
-		(pin "2"
-			(uuid "562fafac-d609-404a-bf4c-5a21623d88d5")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -35731,6 +35426,87 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 332.74 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd7861b4-be22-4ecf-8dfb-17842f794ca5")
+		(property "Reference" "R9"
+			(at 335.28 26.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "39R"
+			(at 335.28 29.2099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 330.962 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 332.74 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "2W"
+			(at 332.74 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e86c0e32-5441-4678-bc2c-d811303560de")
+		)
+		(pin "1"
+			(uuid "2e05d805-f8f4-4dcc-9892-feb758c0f31c")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -36085,85 +35861,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 330.2 45.72 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cf601978-bd1f-41b0-84f7-ef40e673b325")
-		(property "Reference" "#PWR049"
-			(at 336.55 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 334.01 45.7199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9521c714-03d4-478f-aa2c-39e06e0f7549")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR049")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+12V")
 		(at 95.25 31.75 0)
 		(unit 1)
@@ -36320,7 +36017,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 318.77 38.1 180)
+		(at 320.04 43.18 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -36330,7 +36027,7 @@
 		(dnp no)
 		(uuid "d256f6a7-c397-47ab-9e7f-c7cb599ab39c")
 		(property "Reference" "D1"
-			(at 319.024 35.306 0)
+			(at 317.246 42.926 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36340,7 +36037,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 320.3575 33.02 0)
+			(at 314.96 41.5925 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36351,7 +36048,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 38.1 0)
+			(at 320.04 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36362,7 +36059,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 38.1 0)
+			(at 320.04 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36373,7 +36070,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 318.77 38.1 0)
+			(at 320.04 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36384,7 +36081,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 38.1 0)
+			(at 320.04 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36395,7 +36092,7 @@
 			)
 		)
 		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
+			(at 281.94 361.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36808,105 +36505,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:BSS84")
-		(at 300.99 44.45 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d480165c-cab9-4de6-a4ba-c8a9c11f0b2b")
-		(property "Reference" "Q1"
-			(at 307.34 43.1799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BSS84"
-			(at 307.34 45.7199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 306.07 46.355 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf"
-			(at 306.07 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
-			(at 300.99 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C3018484"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "85049ef7-2781-40e1-ae55-e0c3ed1cb25c")
-		)
-		(pin "3"
-			(uuid "caa67c03-a333-44b3-8129-fd3b5b8d402d")
-		)
-		(pin "1"
-			(uuid "df2df132-f989-4d50-8bc0-3413e97f6668")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 125.73 292.1 0)
 		(unit 1)
@@ -37229,6 +36827,108 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 327.66 43.18 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d9ff7576-02e0-4ad6-82c3-92c1eafa2003")
+		(property "Reference" "D7"
+			(at 324.866 42.926 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 322.58 41.5925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
+			(at 327.66 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 327.66 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 327.66 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 327.66 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843891"
+			(at 289.56 361.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "53a9f5db-e6aa-4938-aac4-59c5c2629db5")
+		)
+		(pin "2"
+			(uuid "f3fa3e8e-f42e-4b7e-b26d-680734944127")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -38017,108 +37717,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 60.96 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e0876bf0-63c2-4731-b814-5be654ad930f")
-		(property "Reference" "D11"
-			(at 319.278 58.928 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ed86d13c-86f9-4b5c-997b-10180ec31707")
-		)
-		(pin "2"
-			(uuid "1d615279-bb57-43d1-85cf-12097322de57")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 179.07 53.34 0)
 		(unit 1)
@@ -38532,6 +38130,84 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 307.34 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3af5e1f-e065-4ea4-a18a-1c19f7fe4e16")
+		(property "Reference" "#PWR034"
+			(at 307.34 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 307.34 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 307.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 307.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ac6862e3-4ff5-4903-9ae9-2f43102ff61a")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -39245,6 +38921,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 327.66 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef3ceb06-a2de-40cf-9d5a-418080c60d9e")
+		(property "Reference" "R8"
+			(at 330.2 26.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "39R"
+			(at 330.2 29.2099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.882 27.94 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 327.66 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "2W"
+			(at 327.66 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9fb17a0b-9798-4dc9-8e38-7cfb8954bd03")
+		)
+		(pin "1"
+			(uuid "872dd044-d93a-44eb-865a-7cf5f10e5428")
+		)
+		(instances
+			(project "smart_pouch"
+				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 391.16 58.42 0)
 		(unit 1)
@@ -39599,289 +39356,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 64.77 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f232ddb1-7517-4e72-a050-4a32147c814c")
-		(property "Reference" "D12"
-			(at 319.278 62.992 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4be8ef23-c0fc-4d6b-b2ff-3559eefe8810")
-		)
-		(pin "2"
-			(uuid "82817b92-b042-4c46-8d93-d3f35ffb9101")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 318.77 57.15 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f2d02bfd-2961-4569-9c18-7f74e8c1ec05")
-		(property "Reference" "D10"
-			(at 319.278 55.372 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 320.3575 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V"
-			(at 318.77 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 318.77 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 318.77 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 318.77 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2843891"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "73b65457-b108-4fd0-b515-adc7d0b33ccb")
-		)
-		(pin "2"
-			(uuid "e9bd0f0a-885c-4906-b759-fcc5b3c17ca1")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "D10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 330.2 60.96 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f3058c55-8474-4805-980e-381ba4ec51aa")
-		(property "Reference" "#PWR070"
-			(at 336.55 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 334.01 60.9599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 330.2 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "572a1809-7c58-47eb-8eb5-9be293d8422a")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#PWR070")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 80.01 55.88 0)
 		(unit 1)
@@ -39954,84 +39428,6 @@
 			(project "smart_pouch"
 				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
 					(reference "#PWR096")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 303.53 49.53 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f3849541-d067-42ed-a080-c3b6bb88bec1")
-		(property "Reference" "#FLG003"
-			(at 303.53 51.435 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 303.53 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 303.53 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 303.53 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 303.53 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4b1799e2-731f-4380-9a07-242d8440be4d")
-		)
-		(instances
-			(project "smart_pouch"
-				(path "/cf7f741c-1242-4624-8251-3a3fa2844fb7"
-					(reference "#FLG003")
 					(unit 1)
 				)
 			)
@@ -40704,7 +40100,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V8")
-		(at 303.53 90.17 90)
+		(at 313.69 90.17 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -40715,7 +40111,7 @@
 		(fields_autoplaced yes)
 		(uuid "fc6cb6fb-f94b-4631-8133-7e238107ed4d")
 		(property "Reference" "#PWR0113"
-			(at 307.34 90.17 0)
+			(at 317.5 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40726,7 +40122,7 @@
 			)
 		)
 		(property "Value" "+1V8"
-			(at 299.72 90.1699 90)
+			(at 309.88 90.1699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -40737,7 +40133,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 303.53 90.17 0)
+			(at 313.69 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40748,7 +40144,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 303.53 90.17 0)
+			(at 313.69 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40759,7 +40155,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V8\""
-			(at 303.53 90.17 0)
+			(at 313.69 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
