@@ -5714,7 +5714,7 @@
 					)
 				)
 			)
-			(property "Value" "B4B-XH-A"
+			(property "Value" "XH-4A"
 				(at 0 -8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5735,7 +5735,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://lcsc.com/product-detail/_JST-Sales-America_B4B-XH-A-LF-SN_JST-Sales-America-B4B-XH-A-LF-SN_C144395.html"
+			(property "Datasheet" ""
 				(at 0 -13.97 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5757,7 +5757,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "JST"
+			(property "Manufacturer" "HCTL"
 				(at 0 -16.51 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5768,7 +5768,7 @@
 					)
 				)
 			)
-			(property "MPN" "B4B-XH-A(LF)(SN)"
+			(property "MPN" "XH-4A"
 				(at 0 -19.05 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5779,7 +5779,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C144395"
+			(property "LCSC Part" "C2908602"
 				(at 0 -21.59 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7425,7 +7425,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:NRF9151-SICA"
+		(symbol "easyeda2kicad:NRF9151-LACA-R7"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7441,7 +7441,7 @@
 					)
 				)
 			)
-			(property "Value" "NRF9151-SICA"
+			(property "Value" "NRF9151-LACA-R7"
 				(at -1.27 76.2 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7451,7 +7451,7 @@
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-SICA"
+			(property "Footprint" "easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-LACA-R7"
 				(at 0 -78.74 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7495,7 +7495,7 @@
 					)
 				)
 			)
-			(property "MPN" "nRF9151-SICA"
+			(property "MPN" "nRF9151-LACA-R7"
 				(at 0 -86.36 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7517,7 +7517,7 @@
 					)
 				)
 			)
-			(symbol "NRF9151-SICA_0_1"
+			(symbol "NRF9151-LACA-R7_0_1"
 				(rectangle
 					(start -16.51 73.66)
 					(end 13.97 -73.66)
@@ -18145,7 +18145,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 436.5752 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -18498,6 +18498,39 @@
 		)
 		(property "Description" "Resistor"
 			(at 496.57 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0100JR-070RL"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C364372"
+			(at 0 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19154,7 +19187,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C146125"
+		(property "LCSC Part" "C722696"
 			(at 16.51 -1.27 0)
 			(hide yes)
 			(show_name no)
@@ -19996,7 +20029,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:NRF9151-SICA")
+		(lib_id "easyeda2kicad:NRF9151-LACA-R7")
 		(at 96.52 232.41 0)
 		(unit 1)
 		(body_style 1)
@@ -20071,7 +20104,7 @@
 				)
 			)
 		)
-		(property "MPN" "nRF9151-SICA"
+		(property "MPN" "nRF9151-LACA-R7"
 			(at 96.52 318.77 0)
 			(hide yes)
 			(show_name no)
@@ -21436,7 +21469,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 438.912 60.96 90)
 			(hide yes)
 			(show_name no)
@@ -21518,7 +21551,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 512.572 156.21 90)
 			(hide yes)
 			(show_name no)
@@ -21572,7 +21605,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -21599,7 +21632,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 528.32 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -22111,7 +22144,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 438.912 50.8 90)
 			(hide yes)
 			(show_name no)
@@ -22322,7 +22355,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp yes)
@@ -23027,7 +23060,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -23054,7 +23087,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 532.13 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -23654,7 +23687,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 374.65 170.4848 0)
 			(hide yes)
 			(show_name no)
@@ -26922,7 +26955,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 393.3952 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -27082,7 +27115,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 499.872 156.21 90)
 			(hide yes)
 			(show_name no)
@@ -27446,7 +27479,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C2681544"
+		(property "LCSC Part" "C722698"
 			(at 821.69 -12.7 0)
 			(hide yes)
 			(show_name no)
@@ -27690,7 +27723,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 323.342 71.12 90)
 			(hide yes)
 			(show_name no)
@@ -29130,7 +29163,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp yes)
@@ -29904,7 +29937,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
 			(at 359.41 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -30469,7 +30502,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 353.822 36.83 90)
 			(hide yes)
 			(show_name no)
@@ -30888,7 +30921,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 389.89 30.1752 0)
 			(hide yes)
 			(show_name no)
@@ -31395,6 +31428,39 @@
 		)
 		(property "Description" "Brushed DC Motor Driver, PWM Control, 45V, 3.6A, Current limiting, HTSOP-8"
 			(at 397.51 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DRV8871DDAR"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C75864"
+			(at 0 0 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32139,7 +32205,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 317.5 62.738 90)
 			(hide yes)
 			(show_name no)
@@ -32628,7 +32694,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 38.862 41.91 90)
 			(hide yes)
 			(show_name no)
@@ -33193,7 +33259,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 336.042 36.83 90)
 			(hide yes)
 			(show_name no)
@@ -33996,7 +34062,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 38.862 90.17 90)
 			(hide yes)
 			(show_name no)
@@ -34077,7 +34143,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 348.742 36.83 90)
 			(hide yes)
 			(show_name no)
@@ -36767,7 +36833,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 405.892 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -36912,7 +36978,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -36939,7 +37005,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 529.59 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -37394,7 +37460,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 342.392 36.83 90)
 			(hide yes)
 			(show_name no)
@@ -38291,7 +38357,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 374.65 161.5948 0)
 			(hide yes)
 			(show_name no)
@@ -38440,7 +38506,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SM04B-SRSS-TB"
+		(property "Value" "XH-4A"
 			(at 242.57 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38462,7 +38528,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/_JST-Sales-America_B4B-XH-A-LF-SN_JST-Sales-America-B4B-XH-A-LF-SN_C144395.html"
+		(property "Datasheet" ""
 			(at 234.95 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -38484,7 +38550,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "JST"
+		(property "Manufacturer" "HCTL"
 			(at 234.95 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -38495,7 +38561,7 @@
 				)
 			)
 		)
-		(property "MPN" "B4B-XH-A(LF)(SN)"
+		(property "MPN" "XH-4A"
 			(at 234.95 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -38506,7 +38572,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C144395"
+		(property "LCSC Part" "C2908602"
 			(at 234.95 54.61 0)
 			(hide yes)
 			(show_name no)

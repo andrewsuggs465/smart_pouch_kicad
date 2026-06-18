@@ -6,11 +6,12 @@ value,footprint,lcsc,manufacturer,mpn,note
 0.6pF,Capacitor_SMD:C_0402_1005Metric,C5186863,Chinocera,HGC0402G00R6C500NTEJ,Auto-selected: Extended 0.6pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS
 0.8pF,Capacitor_SMD:C_0402_1005Metric,C40459,FH (Guangdong Fenghua Advanced Tech),0402CG0R8C500NT,Auto-selected: Extended 0.8pF 50V C0G 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS
 12pF,Capacitor_SMD:C_0402_1005Metric,C1547,FH (Guangdong Fenghua Advanced Tech),0402CG120J500NT,Auto-selected: Basic 12pF 50V C0G ±5% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS
+0R,Resistor_SMD:R_01005_0402Metric,C364372,YAGEO,RC0100JR-070RL,Live-checked: stock 254754; 0Ω 01005 jumper resistor.
 LED,easyeda2kicad:LED-SMD_L3.0-W3.0_XL-3030UWC-1W-3V,C2286,Hubei KENTO Elec,KT-0603R,Auto-selected: Basic -40℃~+85℃ 1.8V~2.4V 120° 20mA 300mcd 40mW 615nm~630nm 645nm Discrete Diode Red Water Clear 0603 LED Indication - Discrete ROHS
 PRTR5V0U2X,Package_TO_SOT_SMD:SOT-143,C41409257,ElecSuper,"PRTR5V0U2X,215-ES",Auto-selected: Extended -40℃~+125℃ 140W 1pF 1uA 2 20V 5V 7A 9V ESD IEC 61000-4-2、IEC 61000-4-5 Unidirectional SOT-143 ESD and Surge Protection (TVS/ESD) ROHS
 XH-2P-SMD,easyeda2kicad:CONN-SMD_2P-P2.54_XH2.54-2AB,C722696,CAX,2.54-2A-WT,"Auto-selected: Extended -25℃~+85℃ 1 1x2P 2 2.54mm 2P 500mA 50V 6.1mm 7.8mm Beige LCP Surface Mount, Right Angle Tin XH SMD,P=2.54mm,卧贴 Wire To Board Connector ROHS"
 2.54-3P-LT,easyeda2kicad:CONN-SMD_2.54-3P-LT,C722698,CAX,2.54-3P-LT,"Auto-selected: Extended -25℃~+85℃ 1 1x3P 2.5mm 3 3P 500mA 50V 6mm 7.9mm Beige LCP Phosphor Bronze Surface Mount,Vertical Tin XH SMD,P=2.5mm Wire To Board Connector ROHS"
-SIM_Card,easyeda2kicad:SIM-SMD_SMN-303,C183629,SOFNG,SIM-004X,Auto-selected: Extended -10℃~+60℃ 1.77mm Connector and Ejector Mini-SIM Card No Card Detect Push-Pull SMD SIM Card Connectors ROHS
+SIM_Card,easyeda2kicad:SIM-SMD_SMN-303,C266888,XUNPU,SMN-303,Live-checked: stock 117712; Nano-SIM push-push SMD with card detect, matches SMN-303 footprint.
 10uH,easyeda2kicad:IND-SMD_L4.0-W4.0,C1035,Sunlord,SDFL1608S100KTF,Auto-selected: Basic 1.85Ω 10uH 17MHz 30@2MHz 3mA ±10% 0603 Inductors (SMD) ROHS
 2.2uH,easyeda2kicad:IND-SMD_L4.0-W4.0_NRS4018T,C222887,Taiyo Yuden,NRS4018T680MDGJ,"Auto-selected: Extended 1.2Ω 320mA 520mA 68uH ±20% SMD,4x4mm Power Inductors ROHS"
 4.7nH,easyeda2kicad:L0402-R-RD,C81215,Sunlord,SDCL0603Q4N7ST02,Auto-selected: Extended 220mA 4.7nH 450mΩ Multilayer inductor 0201 Inductors (SMD) ROHS
@@ -19,26 +20,31 @@ BSS84,Package_TO_SOT_SMD:SOT-23,C347485,"UMW(Youtai Semiconductor Co., Ltd.)",BS
 2N7002,Package_TO_SOT_SMD:SOT-23,C8545,"Jiangsu Changjing Electronics Technology Co., Ltd.",2N7002,Auto-selected: Basic 1 N-channel 115mA 2.5V 225mW 50pF 5pF 5Ω@10V 60V SOT-23 MOSFETs ROHS
 47k,Resistor_SMD:R_0402_1005Metric,C25792,UNI-ROYAL(Uniroyal Elec),0402WGF4702TCE,Auto-selected: Basic -55℃~+155℃ 47kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 150k,Resistor_SMD:R_0402_1005Metric,C102813,RALEC,RTT021503FTH,Auto-selected: Extended -55℃~+155℃ 150kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
+150R,Resistor_SMD:R_0402_1005Metric,C25082,UNI-ROYAL(Uniroyal Elec),0402WGF1500TCE,Live-checked: stock 90184; 150Ω 1% 0402.
 10k,Resistor_SMD:R_0402_1005Metric,C25744,UNI-ROYAL(Uniroyal Elec),0402WGF1002TCE,Auto-selected: Basic -55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 330,Resistor_SMD:R_0402_1005Metric,C168263,Walsin Tech Corp,WR04X330JTL,Auto-selected: Extended -55℃~+155℃ 33Ω 50V 62.5mW Thick Film Resistor ±100ppm/℃ ±5% 0402 Chip Resistor - Surface Mount ROHS
 4.7,Resistor_SMD:R_0402_1005Metric,C9900150206,JLCPCB Assembly,4.7K,Auto-selected: Extended 0402 New Arrivals ROHS
 5.1k,Resistor_SMD:R_0402_1005Metric,C25905,UNI-ROYAL(Uniroyal Elec),0402WGF5101TCE,Auto-selected: Basic -55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 22R,Resistor_SMD:R_0402_1005Metric,C25092,UNI-ROYAL(Uniroyal Elec),0402WGF220JTCE,Auto-selected: Basic -55℃~+155℃ 22Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
-22R,Resistor_SMD:R_2512_6332Metric,C175252,Ever Ohms Tech,CRH2512F22R0E04Z,Selected for R7-R10 strobe ballast: Extended -55℃~+155℃ 200V 22Ω 2W Thick Film Resistor ±1% ±100ppm/℃ 2512 Chip Resistor - Surface Mount ROHS
+39R,Resistor_SMD:R_2512_6332Metric,C175263,Ever Ohms Tech,CRH2512F39R0E04Z,Live-checked: stock 1649; selected for R7-R10 2W ballast, 39Ω 1% 2512.
 100R,Resistor_SMD:R_0402_1005Metric,C25076,UNI-ROYAL(Uniroyal Elec),0402WGF1000TCE,Auto-selected: Basic -55℃~+155℃ 100Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 191k,Resistor_SMD:R_0402_1005Metric,C453584,FH (Guangdong Fenghua Advanced Tech),RC-02K1913FT,Auto-selected: Extended -55℃~+155℃ 191kΩ 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 240k,Resistor_SMD:R_0402_1005Metric,C25548,UNI-ROYAL(Uniroyal Elec),0402WGJ0244TCE,Auto-selected: Extended -55℃~+155℃ 240kΩ 50V 62.5mW Thick Film Resistor ±100ppm/℃ ±5% 0402 Chip Resistor - Surface Mount ROHS
 100k,Resistor_SMD:R_0402_1005Metric,C25741,UNI-ROYAL(Uniroyal Elec),0402WGF1003TCE,Auto-selected: Basic -55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
+560k,Resistor_SMD:R_0402_1005Metric,C177266,HKR(Hong Kong Resistors),RCT02560KJLF,Live-checked: stock 3997; 560kΩ 5% 0402.
+2.2M,Resistor_SMD:R_0402_1005Metric,C22356219,HKR(Hong Kong Resistors),RCA022M2JLF,Live-checked: stock 12834; 2.2MΩ 5% 0402.
+18k,Resistor_SMD:R_0402_1005Metric,C25542,UNI-ROYAL(Uniroyal Elec),0402WGJ0183TCE,Live-checked: stock 15631; 18kΩ 5% 0402.
 4.7k,Resistor_SMD:R_0402_1005Metric,C25900,UNI-ROYAL(Uniroyal Elec),0402WGF4701TCE,Auto-selected: Basic -55℃~+155℃ 4.7kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 10k,easyeda2kicad:RES-ADJ-SMD_3P-L3.0-W3.8-P1.75-BR,C25744,UNI-ROYAL(Uniroyal Elec),0402WGF1002TCE,Auto-selected: Basic -55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 SW_Push,easyeda2kicad:KEY-SMD_4P-L4.2-W3.2-P2.20-LS4.6,C53200610,XYECONN,XY-TF PUSH 9P,Auto-selected: Extended -25℃~+85℃ 1.8mm Connector and Ejector MicroSD Card (TF Card) Push-Push SMD SD Card / Memory Card Connector ROHS
 Thermistor,Resistor_SMD:R_0402_1005Metric,C9900146912,JLCPCB Assembly,R-10k(Thermistor),Auto-selected: Extended R0402 New Arrivals ROHS
-nRF52840,Package_DFN_QFN:Nordic_AQFN-73-1EP_7x7mm_P0.5mm,C3606750,Nordic Semicon,NRF52840-CKAA-R7,Auto-selected: Extended -95dBm 1.7V~5.5V 2.4GHz 2.4GHz~2.4835GHz 2Mbps 8dBm SPI、USB、UART、ADC、I2S、PDM、PWM ZigBee、Bluetooth、LoRa、ISM transceiver WLCSP-93(3.5x3.6) RF Transceiver ICs ROHS
+nRF52840,Package_DFN_QFN:Nordic_AQFN-73-1EP_7x7mm_P0.5mm,C190794,Nordic Semicon,NRF52840-QIAA-R,Live-checked: stock 31304; AQFN-73-EP(7x7), matches Nordic_AQFN-73 footprint.
 NRF9151-LACA-R7,easyeda2kicad:LGA-113_L12.1-W11.1_NRF9151-LACA-R7,C22397843,Nordic Semicon,nRF9151-LACA-R7,Auto-selected: Extended LGA-113(12.1x11.1) RF Modules ROHS
-SM04B-SRSS-TB,easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN,C51940130,XYECONN,XY-SM04B-SRSS-TB,"Auto-selected: Extended -25℃~+85℃ 1 1A 1mm 1x4P 4 4P 50V Brass LCP Surface Mount, Right Angle Tin UL94V-0 SMD,P=1mm,卧贴 Wire To Board Connector ROHS"
-HX PZ1.27-2x5P TP,easyeda2kicad:HDR-SMD_10P-P1.27-V-M-R2-C5-LS5.5_1,C22438120,hanxia,HX PZ1.27-2x5P ZZ,"Auto-selected: Extended -40℃~+105℃ 1.27mm 1.27mm 10P 1A 1mm 2 2.3mm 2x5P 3.9mm 500V Black Brass Gold Pin Header Through Hole Plugin,P=1.27mm Pin Headers ROHS"
+XH-4A,easyeda2kicad:CONN-TH_B4B-XH-A-LF-SN,C2908602,HCTL,XH-4A,"Live-checked: stock 181867; in-stock 4P XH-compatible through-hole connector for B4B-XH footprint."
+HX PZ1.27-2x5P TP,easyeda2kicad:HDR-SMD_10P-P1.27-V-M-R2-C5-LS5.5_1,C41376037,hanxia,HX PZ1.27-2x5P TP,"Live-checked: stock 14523; SMD vertical 2x5 1.27mm header, matches HDR-SMD footprint."
 B2B-PH-SM4-TB,easyeda2kicad:CONN-SMD_B2B-PH-SM4-TB-LF-SN,C160352,JST,B2B-PH-SM4-TB(LF)(SN),"Auto-selected: Extended -25℃~+85℃ 1 100V 1x2P 2 2A 2P 2mm 6.6mm 7.95mm 7mm Auxiliary Solder Pin Beige Copper alloy PA PH Surface Mount,Vertical Tin UL94V-0 SMD,P=2mm Wire To Board Connector ROHS"
 32MHz,easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL,C240987,Suzhou Liming Elec,49MD-32.00-20-20-20/A,Auto-selected: Extended -20℃~+70℃ 20pF 32MHz Crystal Oscillator ±20ppm ±20ppm HC-49S-SMD Crystals ROHS
+32.768kHz,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,C70509,NDK,NX3215SA-32.768KHZ-EXS00A-MU00466,Live-checked: stock 3128; 32.768kHz SMD3215-2P crystal.
 SP3012-04UTG,easyeda2kicad:UDFN-10_L2.5-W1.0-P0.50-BL,C2987148,TECH PUBLIC,SP3012-04UTG,Auto-selected: Extended 0.3pF 10nA 13V 5V 7.5V Four channels IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 TVS Unidirectional DFN2510-10 ESD and Surge Protection (TVS/ESD) ROHS
 SS34_C8678,easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD,C8678,MDD(Microdiode Semiconductor),SS34,Auto-selected: Basic -55℃~+125℃ 3A 40V 500uA@40V 550mV@3A Independent SMA(DO-214AC) Schottky Diodes ROHS
 19-237/R6GHBHC-A01/2T,easyeda2kicad:LED-ARRAY-SMD_4P-L1.6-W1.6-BL_1,C60105,Everlight Elec,19-237/R6GHBHC-A01/2T,"Auto-selected: Extended 120° Common Anode SMD-4P,1.6x1.6mm RGB LEDs ROHS"
@@ -48,3 +54,4 @@ BWU.FL-IPEX1,easyeda2kicad:IPEX-SMD_BWIPX-1-001E,C5137195,BAT WIRELESS,BWU.FL-IP
 AN6520-245,easyeda2kicad:ANT-SMD_L6.5-W2.0,C239238,Rainsun microwave Tech,AN6520-245,Auto-selected: Extended -40℃~+85℃ 0.5dBi 1mm 2 2.2mm 2.45GHz 200MHz 3W 50Ω 6.5mm SMD Antennas ROHS
 SEN0348_CONN,easyeda2kicad:CONN-SMD_SM06B-SRSS-TB-LF-SN,C3678788,DFRobot,SEN0348,Auto-selected: Extended - Heart Rate Sensors ROHS
 MT3608,easyeda2kicad:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL,C2932326,XI'AN Aerosemi Tech,MT3608L,Auto-selected: Extended -40℃~+85℃@(TA) 1 1.2MHz 100uA 2.2V~16V 2.5A Adjustable Boost Boost Built-in No SOT-23-6 DC-DC Converters ROHS
+DRV8871DDA,Package_SO:Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias,C75864,Texas Instruments,DRV8871DDAR,Live-checked: stock 6051; SO-8-EP package matches HTSOP-8 exposed-pad footprint.

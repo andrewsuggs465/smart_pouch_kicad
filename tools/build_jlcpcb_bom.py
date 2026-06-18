@@ -117,8 +117,8 @@ def normalize_search_results(results: Any) -> list[Any]:
     return list(results) if results else []
 
 
-def fetch_live_parts(lcsc_ids: set[str], no_network: bool) -> dict[str, dict[str, Any]]:
-    if no_network or not lcsc_ids:
+def fetch_live_parts(lookup_terms: dict[str, list[str]], no_network: bool) -> dict[str, dict[str, Any]]:
+    if no_network or not lookup_terms:
         return {}
     try:
         from easyeda2kicad.easyeda.easyeda_api import EasyedaApi
@@ -128,19 +128,22 @@ def fetch_live_parts(lcsc_ids: set[str], no_network: bool) -> dict[str, dict[str
 
     api = EasyedaApi()
     live: dict[str, dict[str, Any]] = {}
-    for lcsc_id in sorted(lcsc_ids):
-        try:
-            results = normalize_search_results(api.search_jlcpcb_components(lcsc_id, page_size=10))
-        except Exception as exc:  # pragma: no cover - network dependent
-            print(f"Warning: JLCPCB lookup failed for {lcsc_id}: {exc}")
-            continue
+    for lcsc_id in sorted(lookup_terms):
         exact = None
-        for result in results:
-            if get_attr(result, "lcsc") == lcsc_id:
-                exact = result
+        for term in [lcsc_id, *lookup_terms[lcsc_id]]:
+            if not term:
+                continue
+            try:
+                results = normalize_search_results(api.search_jlcpcb_components(term, page_size=10))
+            except Exception as exc:  # pragma: no cover - network dependent
+                print(f"Warning: JLCPCB lookup failed for {lcsc_id} via {term}: {exc}")
+                continue
+            for result in results:
+                if get_attr(result, "lcsc") == lcsc_id:
+                    exact = result
+                    break
+            if exact is not None:
                 break
-        if exact is None and results:
-            exact = results[0]
         if exact is None:
             continue
         live[lcsc_id] = {
@@ -171,9 +174,8 @@ def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]], 
         lcsc = raw.get("LCSC Part", raw.get("LCSC", "")).strip()
 
         # Priority 2: parts_db lookup by (value, footprint)
-        db_entry: dict[str, str] = {}
+        db_entry = parts_db.get((raw_value.lower(), raw_footprint), {})
         if not lcsc:
-            db_entry = parts_db.get((raw_value.lower(), raw_footprint), {})
             lcsc = db_entry.get("lcsc", "").strip()
 
         # Priority 3: OVERRIDES (deprecated fallback)
@@ -209,8 +211,8 @@ def build_rows(raw_rows: list[dict[str, str]], live: dict[str, dict[str, Any]], 
                 "Value": raw_value,
                 "KiCad Footprint": effective_footprint,
                 "LCSC Part #": lcsc,
-                "Manufacturer": live_part.get("manufacturer") or db_entry.get("manufacturer") or override.manufacturer or raw.get("Manufacturer", ""),
-                "MFR Part #": live_part.get("mpn") or db_entry.get("mpn") or override.mpn or raw.get("MPN", ""),
+                "Manufacturer": live_part.get("manufacturer") or raw.get("Manufacturer", "") or db_entry.get("manufacturer") or override.manufacturer,
+                "MFR Part #": live_part.get("mpn") or raw.get("MPN", "") or db_entry.get("mpn") or override.mpn,
                 "Description": live_part.get("description", ""),
                 "Package": live_part.get("package", ""),
                 "Library Type": live_part.get("library_type", ""),
@@ -295,20 +297,24 @@ def main() -> None:
     raw_rows = read_csv(args.raw)
     parts_db = load_parts_db(args.parts_db)
 
-    # Collect LCSC IDs from all three priority sources for the live lookup.
-    lcsc_ids: set[str] = set()
+    # Collect LCSC IDs and alternate search terms for the live lookup.
+    lookup_terms: dict[str, list[str]] = {}
     for row in raw_rows:
         lcsc = row.get("LCSC Part", row.get("LCSC", "")).strip()
+        db_entry = parts_db.get((row.get("Value", "").lower().strip(), row.get("Footprint", "").strip()), {})
         if not lcsc:
-            db_entry = parts_db.get((row.get("Value", "").lower().strip(), row.get("Footprint", "").strip()), {})
             lcsc = db_entry.get("lcsc", "").strip()
         if not lcsc:
             refs = row.get("Refs") or row.get("Reference", "")
             lcsc = OVERRIDES.get(refs, Override()).lcsc
         if lcsc:
-            lcsc_ids.add(lcsc)
+            terms = lookup_terms.setdefault(lcsc, [])
+            for term in (row.get("MPN", ""), db_entry.get("mpn", ""), row.get("Value", "")):
+                term = term.strip()
+                if term and term not in terms:
+                    terms.append(term)
 
-    live = fetch_live_parts(lcsc_ids, args.no_network)
+    live = fetch_live_parts(lookup_terms, args.no_network)
     rows = build_rows(raw_rows, live, args.board_qty, parts_db)
 
     review_headers = [
