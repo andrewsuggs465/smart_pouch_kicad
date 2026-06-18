@@ -24,6 +24,7 @@ BSS84,Package_TO_SOT_SMD:SOT-23,C347485,"UMW(Youtai Semiconductor Co., Ltd.)",BS
 4.7,Resistor_SMD:R_0402_1005Metric,C9900150206,JLCPCB Assembly,4.7K,Auto-selected: Extended 0402 New Arrivals ROHS
 5.1k,Resistor_SMD:R_0402_1005Metric,C25905,UNI-ROYAL(Uniroyal Elec),0402WGF5101TCE,Auto-selected: Basic -55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 22R,Resistor_SMD:R_0402_1005Metric,C25092,UNI-ROYAL(Uniroyal Elec),0402WGF220JTCE,Auto-selected: Basic -55℃~+155℃ 22Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
+22R,Resistor_SMD:R_2512_6332Metric,C175252,Ever Ohms Tech,CRH2512F22R0E04Z,Selected for R7-R10 strobe ballast: Extended -55℃~+155℃ 200V 22Ω 2W Thick Film Resistor ±1% ±100ppm/℃ 2512 Chip Resistor - Surface Mount ROHS
 100R,Resistor_SMD:R_0402_1005Metric,C25076,UNI-ROYAL(Uniroyal Elec),0402WGF1000TCE,Auto-selected: Basic -55℃~+155℃ 100Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 191k,Resistor_SMD:R_0402_1005Metric,C453584,FH (Guangdong Fenghua Advanced Tech),RC-02K1913FT,Auto-selected: Extended -55℃~+155℃ 191kΩ 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS
 240k,Resistor_SMD:R_0402_1005Metric,C25548,UNI-ROYAL(Uniroyal Elec),0402WGJ0244TCE,Auto-selected: Extended -55℃~+155℃ 240kΩ 50V 62.5mW Thick Film Resistor ±100ppm/℃ ±5% 0402 Chip Resistor - Surface Mount ROHS
