@@ -36,6 +36,8 @@ class Override:
     manual: bool = False
 
 
+OVERRIDES: dict[str, Override] = {}  # deprecated — use bom/parts_db.csv
+
 PART_WARNINGS: dict[str, str] = {}
 
 

@@ -1,8 +1,27 @@
-~smart_pouch.kicad_pro.lck
-~smart_pouch.kicad_sch.lck
+# Local editor / assistant state
+.claude/
+.history/
+
+# KiCad local/generated files
 *.lck
+*.kicad_prl
+*-backups/
+smart_pouch-backups/
+
+# LaTeX build outputs
 *.aux
+*.fdb_latexmk
+*.fls
 *.log
 *.out
 *.synctex.gz
+*.toc
+
+# Python cache
 __pycache__/
+*.py[cod]
+
+# OS / editor clutter
+.DS_Store
+*~
+*.tmp
