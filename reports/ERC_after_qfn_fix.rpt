@@ -1,0 +1,26 @@
+ERC report (2026-06-18T23:32:48, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[pin_not_driven]: Input pin not driven by any Output pins
+    ; error
+    @(77.47 mm, 224.79 mm): Symbol U2 Pin 26 [SIM_DET, Input, Line]
+[pin_not_connected]: Pin not connected
+    ; error
+    @(405.13 mm, 191.77 mm): Symbol R16 Pin 1 [Passive, Line]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(115.57 mm, 57.15 mm): Vertical Wire, length 1.27 mm
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(452.12 mm, 195.58 mm): Horizontal Wire, length 1.27 mm
+
+ ** ERC messages: 4  Errors 2  Warnings 2
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - Conflict problem between pins
+    - SPICE model issue
+    - Symbol doesn't match copy in library
+    - Assigned footprint doesn't match footprint filters

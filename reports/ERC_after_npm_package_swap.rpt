@@ -1,0 +1,48 @@
+ERC report (2026-06-18T23:25:31, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(41.91 mm, 45.72 mm): Symbol U12 Pin 4 [EN, Input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(77.47 mm, 184.15 mm): Symbol U2 Pin 10 [ENABLE, Input, Line]
+[pin_not_driven]: Input pin not driven by any Output pins
+    ; error
+    @(77.47 mm, 224.79 mm): Symbol U2 Pin 26 [SIM_DET, Input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(276.86 mm, 44.45 mm): Symbol U8 Pin 6 [6, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(297.18 mm, 158.75 mm): Symbol U1 Pin B1 [VDD, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(302.26 mm, 158.75 mm): Symbol U1 Pin AD2 [VBUS, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(452.12 mm, 167.64 mm): Symbol U15 Pin 3 [SW1, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(518.16 mm, 165.10 mm): Symbol U15 Pin 32 [VOUT2, Power input, Line]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(115.57 mm, 57.15 mm): Vertical Wire, length 1.27 mm
+[multiple_net_names]: Both +1V8 and NPM_SCL are attached to the same items; +1V8 will be used in the netlist
+    ; warning
+    @(374.65 mm, 279.40 mm): Symbol #PWR0129 Pin 1 [Power input, Line]
+    @(405.13 mm, 191.77 mm): Label 'NPM_SCL'
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(452.12 mm, 195.58 mm): Horizontal Wire, length 1.27 mm
+
+ ** ERC messages: 11  Errors 8  Warnings 3
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - Conflict problem between pins
+    - SPICE model issue
+    - Symbol doesn't match copy in library
+    - Assigned footprint doesn't match footprint filters
