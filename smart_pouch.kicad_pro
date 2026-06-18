@@ -814,7 +814,7 @@
         "uuid": "cf7f741c-1242-4624-8251-3a3fa2844fb7"
       }
     ],
-    "used_designators": "R24,R31,#PWR32,#PWR56-58,#PWR66-67,#PWR123,#PWR136-137,C37,Card1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

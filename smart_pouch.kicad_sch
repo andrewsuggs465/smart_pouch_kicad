@@ -19180,7 +19180,7 @@
 				)
 			)
 		)
-		(property "Value" "XH-2P-SMD"
+		(property "Value" "Solenoid XH-2P-SMD"
 			(at 288.29 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19661,7 +19661,7 @@
 				)
 			)
 		)
-		(property "Value" "PRTR5V0U2X"
+		(property "Value" "PRTR5V0U2X ESD"
 			(at 480.06 275.5198 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19875,7 +19875,7 @@
 				)
 			)
 		)
-		(property "Value" "19-237/R6GHBHC-A01/2T"
+		(property "Value" "Power RGB"
 			(at 405.765 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21082,7 +21082,7 @@
 				)
 			)
 		)
-		(property "Value" "HX PZ1.27-2x5P TP"
+		(property "Value" "52840 SWD P=1.27mm 2x5P"
 			(at 234.95 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21114,7 +21114,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "52840 SWD P=1.27mm 2x5P"
 			(at 234.95 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -22704,7 +22704,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c989aae-a999-469a-9c5a-c415940304f9")
+			(uuid "8c989aae-a999-469a-9c5a-c415940304fa")
 		)
 		(instances
 			(project "smart_pouch"
@@ -24197,7 +24197,7 @@
 				)
 			)
 		)
-		(property "Value" "19-237/R6GHBHC-A01/2T"
+		(property "Value" "USER LED"
 			(at 360.045 261.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27493,7 +27493,7 @@
 				)
 			)
 		)
-		(property "Value" "2.54-3P-LT"
+		(property "Value" "2.54-3P-LT Piezo"
 			(at 425.958 36.322 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27525,7 +27525,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x03, script generated"
+		(property "Description" "Piezo"
 			(at 429.26 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -28377,7 +28377,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c989aae-a999-469a-9c5a-c415940304f9")
+			(uuid "8c989aae-a999-469a-9c5a-c415940304fb")
 		)
 		(instances
 			(project "smart_pouch"
@@ -33709,7 +33709,7 @@
 				)
 			)
 		)
-		(property "Value" "TYPE-C 16PIN 2MD"
+		(property "Value" "TYPE-C  16P"
 			(at 532.13 269.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37363,7 +37363,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SEN0348_CONN"
+		(property "Value" "JST P=1mm 01x06"
 			(at 324.358 49.276 0)
 			(hide yes)
 			(show_name no)
@@ -37706,7 +37706,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c989aae-a999-469a-9c5a-c415940304f9")
+			(uuid "8c989aae-a999-469a-9c5a-c415940304fc")
 		)
 		(instances
 			(project "smart_pouch"
@@ -37977,7 +37977,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B3B-PH-K-S"
+		(property "Value" "JST 1x3 Battery P=1.27mm"
 			(at 191.77 82.5499 0)
 			(hide yes)
 			(show_name no)
@@ -38011,7 +38011,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST 1x3 Battery P=1.27mm"
 			(at 186.69 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -38022,7 +38022,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "JST"
+		(property "Manufacturer" "JST 1x3 Battery P=1.27mm"
 			(at 186.69 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -38503,7 +38503,7 @@
 				)
 			)
 		)
-		(property "Value" "HX PZ1.27-2x5P TP"
+		(property "Value" "9151 SWD P=1.27mm 2x5P"
 			(at 234.95 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38535,7 +38535,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "9151 SWD P=1.27mm 2x5P"
 			(at 234.95 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -38799,7 +38799,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XH-4A"
+		(property "Value" "XH-4A UART 9151"
 			(at 242.57 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38832,7 +38832,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "XH-4A UART 9151"
 			(at 234.95 33.02 0)
 			(hide yes)
 			(show_name no)
