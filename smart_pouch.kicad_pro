@@ -582,12 +582,48 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part",
+          "name": "LCSC Part",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -640,7 +676,7 @@
         "uuid": "cf7f741c-1242-4624-8251-3a3fa2844fb7"
       }
     ],
-    "used_designators": "#FLG2-3,L6,Q1-2,U5,U7,U15,TP1-3,R6-17,R23-24,R28-30,USB1,CN1,Y2,#PWR34-35,#PWR39-41,#PWR47-50,#PWR54,#PWR60,#PWR63-64,#PWR66,#PWR72,#PWR82-85,#PWR91,#PWR93,#PWR104-106,#PWR109,#PWR126-133,D2,D4,D6-11,C3-4,C9-10,C14,C24-26,C28,C34",
+    "used_designators": "#FLG2-3,#FLG7-10,L6,Q1-2,U5,U7,U15,TP1-3,R6-17,R23-24,R28-30,USB1,CN1,Y2,#PWR32,#PWR34-35,#PWR39-41,#PWR47-50,#PWR54,#PWR56,#PWR60,#PWR63-64,#PWR66,#PWR72,#PWR82-85,#PWR91,#PWR93,#PWR104-106,#PWR109,#PWR126-135,D2-4,D6-12,C3-4,C9-10,C14,C24-26,C28,C34,C36",
     "variants": []
   },
   "sheets": [
